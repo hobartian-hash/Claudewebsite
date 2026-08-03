@@ -1,0 +1,37 @@
+---
+layout: layouts/base.njk
+---
+{%- from "partials/face.njk" import face -%}
+{%- from "partials/cta.njk" import cta -%}
+
+<div class="wrap">
+    <section class="pagehead">
+      <span class="eyebrow">About</span>
+      <h1>Hello, I'm {{ site.author }}.</h1>
+    </section>
+
+    <div class="measure">
+      <div class="aboutlead">
+        {{ face(site, 'face') }}
+        <span class="fine">{{ site.place }}<br>Writing every {{ site.publishDay }}</span>
+      </div>
+
+      <div class="prose" style="padding-top:0">
+        <p>{{ site.about }}</p>
+        {%- for p in site.aboutMore %}
+        <p>{{ p }}</p>
+        {%- endfor %}
+
+        <h2>What I write about</h2>
+        <ul>
+          {%- for key, name in site.topics %}
+          <li><strong>{{ name }}</strong> — {{ site.topicNotes[key] if site.topicNotes[key] else 'one line on what this topic covers.' }}</li>
+          {%- endfor %}
+        </ul>
+
+        <p><a class="backlink" href="/archive/">Read the archive &rarr;</a></p>
+      </div>
+    </div>
+
+    {{ cta(site, 'about') }}
+  </div>

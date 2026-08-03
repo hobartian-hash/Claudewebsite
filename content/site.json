@@ -1,0 +1,49 @@
+{
+  "_comment": "Everything about the site that isn't an essay. Edit this file, not anything in src/.",
+
+  "baseUrl": "https://SUBDOMAIN.netlify.app",
+
+  "description": "One short essay every Sunday about the things that only happen deliberately — at work, at home, and in the gap between the two.",
+
+  "author": "Tim",
+  "wordmark": "On Purpose",
+  "initials": "T",
+  "strapline": "Essays by Tim",
+  "photo": "",
+  "place": "Hobart, Tasmania",
+  "publishDay": "Sunday",
+  "readerCount": "",
+
+  "subscribeEndpoint": "",
+
+  "socials": [
+    { "label": "LinkedIn", "url": "#" }
+  ],
+
+  "topics": {
+    "work": "Work",
+    "coaching": "Coaching",
+    "career": "Career",
+    "fathering": "Fathering",
+    "offclock": "Off the Clock"
+  },
+
+  "_topicNotes": "The one-line descriptions on the About page. Taken from the notes beside each topic in the mockup.",
+  "topicNotes": {
+    "work": "clients, projects, the craft of consulting.",
+    "coaching": "building the person beside you.",
+    "career": "the shape of a working life.",
+    "fathering": "what gets handed on, deliberately or not.",
+    "offclock": "energy, attention, the life around the work."
+  },
+
+  "about": "I'm a consultant and a father, based in Hobart. My weeks are spent inside other people's problems — reading the room, running the project, trying to leave things better than I found them. Every Sunday I write one short essay about what that's actually like, at work and at home.",
+
+  "aboutMore": [
+    "Most of what I write comes out of something that happened that week. A moment in a meeting I couldn't stop thinking about, a habit I caught myself in, a thing I got wrong and only noticed later.",
+    "The thread running through all of it is the difference between what happens by default and what only happens because someone decided it would. Drift is free. Everything worth having has to be chosen out loud.",
+    "Some weeks that's a project, a client, or the person you're meant to be handing the work to. Other weeks it's my kids. I've stopped trying to keep those separate, because the same thing is going on in both."
+  ],
+
+  "signoff": "Cheers,"
+}

@@ -1,0 +1,11 @@
+{# The lead panel on the home page. A dark block standing in for the
+   photograph a normal newsletter would use here. Always the newest
+   essay, chosen by date. #}
+{% macro lead(e, site) -%}
+<a class="lead" href="/essays/{{ e.slug }}/">
+      <span class="pill">{{ e.topic | topicName(site.topics) }}</span>
+      <h2>{{ e.title }}</h2>
+      <p>{{ e.hook }}</p>
+      <span class="row"><span>Issue No. {{ e.number | pad }} &middot; {{ e.readTime }} min read</span><span class="go">Read the essay &rarr;</span></span>
+    </a>
+{%- endmacro %}

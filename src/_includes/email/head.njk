@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="x-apple-disable-message-reformatting" />
+<meta name="color-scheme" content="light" />
+<meta name="supported-color-schemes" content="light" />
+<title>{{ site.wordmark }} — the {{ site.publishDay }} essay</title>
+
+<!--
+  =========================================================
+  ON PURPOSE — EMAIL TEMPLATE
+  The Sunday essay by Tim
+
+  THIS FILE IS GENERATED. Do not edit the output — edit the
+  essay in content/essays/ and run `npm run email -- NNN`
+  again. The templates live in src/_includes/email/.
+
+  STRUCTURE (top to bottom)
+    1. Masthead        lowercase, centred
+    2. Title           big, centred
+    3. Hook            centred subtitle — the one-liner from the site
+    4. Utility line    READ ON MY WEBSITE · N MIN READ
+    5. Sponsor slot    commented out. Uncomment when you have one.
+    6. The essay       left aligned, short paragraphs
+    7. Sign-off
+    8. Subscribe panel for forwarded readers
+    9. Footer + unsubscribe
+
+  EACH WEEK you change: preview text, title, hook, read time,
+  and the essay. All of it comes from the markdown file.
+
+  WHY THE CODE LOOKS LIKE 2004
+  Tables and inline styles. Outlook renders email with Microsoft
+  Word's engine and ignores most modern CSS. This is deliberate —
+  don't let anyone "tidy it up" into divs and classes.
+
+  ---------------------------------------------------------
+  V2 — after testing on iOS Gmail, iOS Outlook and iPad Gmail
+  ---------------------------------------------------------
+  Buttondown's free plan strips the <head>, so the <style> block
+  and the colour-scheme meta tags below never reach the inbox.
+  Every client tested therefore force-inverted the email. The
+  layout held. Two dark panels did not.
+
+  THE RULE THAT CAME OUT OF IT:
+  encode meaning with HUE and RULES, never with light-vs-dark.
+  Inversion remaps lightness and mostly leaves hue alone. Brass
+  (#C08A3E) survives everywhere, and so do hairline borders. Ink
+  (#26241F) and paper (#F1EFEA) sit at opposite extremes and both
+  collapse toward the same mid grey — so anything relying on the
+  contrast between those two disappears.
+
+  Changed in v2:
+   1. Active 2x2 cell   dark fill -> brass fill
+   2. Subscribe panel   added a 2px brass border
+   3. Outer background  kept, with the trade-off documented inline
+
+  Not fixable on the free plan, and not worth paying to fix:
+   - iOS linkifies dates ("Thursday afternoon" went blue). The
+     rule that suppresses it lives in the stripped <style> block.
+   - Link colour is Buttondown's, set globally by the tint colour
+     under Settings > General > Branding. Currently #26241F, which
+     is what makes the brass button read correctly.
+   - The <style> block is kept regardless: it costs nothing, and it
+     works if you ever move to Naked mode or another provider.
+  =========================================================
+-->
+
+<!-- Web fonts: Apple Mail and a few others will use these; everything
+     else quietly falls back to Georgia, which is close enough that most
+     readers won't notice. Never rely on the web font for legibility. -->
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet" />
+
+<style type="text/css">
+  body { margin:0 !important; padding:0 !important; width:100% !important; background-color:#F1EFEA; }
+  table { border-collapse:collapse !important; }
+  img { border:0; outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; }
+
+  .ExternalClass { width:100%; }
+  .ExternalClass, .ExternalClass p, .ExternalClass td { line-height:100%; }
+
+  a[x-apple-data-detectors] {
+    color:inherit !important; text-decoration:none !important;
+    font-size:inherit !important; font-family:inherit !important; font-weight:inherit !important;
+  }
+
+  @media screen and (max-width:640px) {
+    .container { width:100% !important; }
+    .pad       { padding-left:24px !important; padding-right:24px !important; }
+    .title     { font-size:30px !important; line-height:1.15 !important; }
+    .hook      { font-size:18px !important; }
+    .quote     { font-size:20px !important; }
+    .body-copy { font-size:17px !important; }
+    .cell-2x2  { font-size:13px !important; padding:14px 12px !important; }
+  }
+</style>
+</head>
+
+<body style="margin:0; padding:0; background-color:#F1EFEA;">
+
+<!-- PREVIEW TEXT — the grey line beside your subject in the inbox.
+     It comes from `previewText` in the essay's front matter. It does more
+     for opens than anything else here, so it's authored, never generated.
+     The invisible characters after it stop Gmail pulling in body text. -->
+<div style="display:none; font-size:1px; color:#F1EFEA; line-height:1px; max-height:0; max-width:0; opacity:0; overflow:hidden;">
+  {{ essay.previewText }}
+  &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+</div>
+
+<!-- THE SEAM, and the one judgement call in this file.
+     In dark mode this background and Buttondown's own wrapper invert to slightly
+     different darks, so a faint step shows at the top edge of the email. Deleting
+     background-color below closes the seam — but it also gives up the warm paper
+     colour in LIGHT mode, where Buttondown's wrapper is plain white. That's a bad
+     trade: the paper is a signature, the seam is a hairline. Left in deliberately.
+     If you decide the seam bothers you more than the white does, delete the
+     background-color declaration here and on <body> above, and re-test both modes. -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F1EFEA;">
+<tr><td align="center" style="padding:0;">
+
+  <!-- Content sits directly on the background. No card, no border. -->
+  <table role="presentation" class="container" width="640" cellpadding="0" cellspacing="0" border="0" style="width:640px; max-width:640px;">
+
+    <!-- ============ 1. MASTHEAD ============ -->
+    <tr><td class="pad" align="center" style="padding:52px 60px 0 60px;">
+      <div style="font-family:'Newsreader',Georgia,'Times New Roman',serif; font-size:21px; color:#3F6E8C; line-height:1.3;">
+        {{ site.wordmark | lower }} &nbsp;·&nbsp; the {{ site.publishDay | lower }} essay by {{ site.author | lower }}
+      </div>
+    </td></tr>
+
+    <!-- ============ 2. TITLE ============ -->
+    <tr><td class="pad" align="center" style="padding:38px 60px 0 60px;">
+      <h1 class="title" style="margin:0; font-family:'Newsreader',Georgia,'Times New Roman',serif;
+                 font-weight:normal; font-size:42px; line-height:1.1; color:#26241F;">
+        {{ essay.title }}
+      </h1>
+    </td></tr>
+
+    <!-- ============ 3. HOOK ============ -->
+    <tr><td class="pad" align="center" style="padding:22px 70px 0 70px;">
+      <div class="hook" style="font-family:'Newsreader',Georgia,'Times New Roman',serif;
+                  font-size:21px; line-height:1.45; color:#6B665D;">
+        {{ essay.emailHook }}
+      </div>
+    </td></tr>
+
+    <!-- ============ 4. UTILITY LINE ============ -->
+    <tr><td class="pad" align="center" style="padding:26px 60px 0 60px;
+             font-family:Helvetica,Arial,sans-serif; font-size:11px; letter-spacing:2px;
+             text-transform:uppercase; color:#6B665D;">
+      <a href="{{ essayUrl }}"
+         style="color:#6B665D; text-decoration:underline;">Read on my website</a>
+      &nbsp;&middot;&nbsp; {{ essay.readTime }} min read
+    </td></tr>
+
+    <!-- ============ 5. SPONSOR SLOT ============
+         Left in, commented out. When you're big enough to sell one,
+         delete the comment markers and fill it in. Duplicate for a second.
+
+    <tr><td class="pad" style="padding:38px 60px 0 60px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#E7E3DB;">
+        <tr><td style="padding:26px 28px;">
+          <div style="font-family:Helvetica,Arial,sans-serif; font-size:10px; letter-spacing:2px;
+                      text-transform:uppercase; color:#6B665D; padding-bottom:12px;">Sponsored &middot; Company name</div>
+          <div style="font-family:'Newsreader',Georgia,serif; font-size:20px; font-weight:600; color:#26241F; padding-bottom:10px;">
+            The offer headline
+          </div>
+          <div style="font-family:'Newsreader',Georgia,serif; font-size:16px; line-height:1.6; color:#4A453C; padding-bottom:20px;">
+            Two sentences on what it is and why this audience would care.
+          </div>
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+            <tr><td style="background-color:#26241F;">
+              <a href="#" style="display:inline-block; padding:12px 22px; font-family:Helvetica,Arial,sans-serif;
+                 font-size:13px; font-weight:bold; color:#FAF8F4; text-decoration:none;">Call to action &rarr;</a>
+            </td></tr>
+          </table>
+        </td></tr>
+      </table>
+    </td></tr>
+
+    ============ END SPONSOR SLOT ============ -->
+
+    <!-- Divider before the essay -->
+    <tr><td class="pad" style="padding:44px 60px 0 60px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr><td style="border-top:1px solid #DDD8CF; font-size:0; line-height:0;">&nbsp;</td></tr>
+      </table>
+    </td></tr>

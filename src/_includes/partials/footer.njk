@@ -1,0 +1,12 @@
+<footer class="foot">
+  <div class="wrap">
+    <span>&copy; {{ buildYear }} {{ site.author }} &middot; {{ site.place }}</span>
+    <nav>
+      <a href="/archive/">Archive</a>
+      <a href="/about/">About</a>
+      {%- for s in site.socials %}
+      <a href="{{ s.url }}">{{ s.label }}</a>
+      {%- endfor %}
+    </nav>
+  </div>
+</footer>

@@ -1,0 +1,56 @@
+    <!-- ---------- FORWARD PROMPT ---------- -->
+    <tr><td class="pad" style="padding:38px 60px 0 60px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr><td style="border-top:1px solid #DDD8CF; padding-top:22px;
+                   font-family:'Newsreader',Georgia,serif; font-size:16px; line-height:1.65; color:#6B665D;">
+          If this was useful, forward it to someone who'd get something out of it. Shorter thoughts during the week on
+          {% for s in site.socials %}<a href="{{ s.url }}" style="color:#3F6E8C;">{{ s.label }}</a>{% if not loop.last %} and {% endif %}{% endfor %}.
+        </td></tr>
+      </table>
+    </td></tr>
+
+    <!-- ---------- SUBSCRIBE PANEL (for forwarded readers) ---------- -->
+    <tr><td class="pad" style="padding:36px 60px 0 60px;">
+      <!-- The dark fill inverts to nearly the page colour, at which point the panel
+           stops looking like a panel. The brass border gives it an edge that holds
+           in both modes. Same trick as the pull quote, which survived on this
+           strength of its brass bar alone. -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#26241F; border:2px solid #C08A3E;">
+        <tr><td align="center" style="padding:38px 34px;">
+          <div style="font-family:Helvetica,Arial,sans-serif; font-size:10px; letter-spacing:2px;
+                      text-transform:uppercase; color:#C08A3E;">Forwarded this?</div>
+          <div style="font-family:'Newsreader',Georgia,serif; font-size:26px; line-height:1.25;
+                      color:#FAF8F4; padding:16px 0 12px 0;">
+            Get it yourself, every {{ site.publishDay }}.
+          </div>
+          <div style="font-family:'Newsreader',Georgia,serif; font-size:16px; line-height:1.6;
+                      color:#CFC8BC; padding-bottom:24px;">
+            One essay a week. Free, and easy to leave.
+          </div>
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+            <tr><td align="center" style="background-color:#C08A3E;">
+              <a href="{{ site.baseUrl }}/" style="display:inline-block; padding:14px 28px;
+                 font-family:Helvetica,Arial,sans-serif; font-size:14px; font-weight:bold;
+                 color:#26241F; text-decoration:none;">Subscribe free &rarr;</a>
+            </td></tr>
+          </table>
+        </td></tr>
+      </table>
+    </td></tr>
+
+    <!-- ---------- FOOTER ---------- -->
+    <tr><td class="pad" align="center" style="padding:34px 60px 52px 60px;">
+      <div style="font-family:Helvetica,Arial,sans-serif; font-size:12px; line-height:1.8; color:#6B665D;">
+        {{ site.author }} &middot; {{ site.place }}<br />
+        <a href="{{ site.baseUrl }}/" style="color:#6B665D;">Read on the web</a> &nbsp;&middot;&nbsp;
+        <a href="{% raw %}{{ unsubscribe_url }}{% endraw %}" style="color:#6B665D;">Unsubscribe</a>
+        <!-- Your provider appends the required postal address automatically. -->
+      </div>
+    </td></tr>
+
+  </table>
+</td></tr>
+</table>
+
+</body>
+</html>

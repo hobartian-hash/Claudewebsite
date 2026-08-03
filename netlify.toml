@@ -1,0 +1,12 @@
+# Netlify build settings. Netlify reads this file automatically when it
+# builds the site, so there is nothing to configure in their web interface.
+
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Every page is a real file, so no redirect rules are needed. Netlify serves
+# _site/404.html by itself for anything that doesn't exist.

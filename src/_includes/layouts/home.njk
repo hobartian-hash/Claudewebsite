@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+---
+{%- from "partials/face.njk" import face -%}
+{%- from "partials/subform.njk" import subform -%}
+{%- from "partials/cta.njk" import cta -%}
+{%- from "partials/card.njk" import card -%}
+{%- from "partials/lead.njk" import lead -%}
+{%- set newest = essays[0] -%}
+
+<div class="wrap">
+    <section class="hero">
+      {{ face(site, 'face') }}
+      <span class="eyebrow">A {{ site.publishDay }} newsletter by {{ site.author }}</span>
+      <h1>Drift is free. Everything else you do <em>on purpose</em>.</h1>
+      <p class="lede">One short essay every {{ site.publishDay }} morning on work, fathering, and the things that never happen unless somebody decides they will.</p>
+      {{ subform(site, 'sub-hero') }}
+      <p class="fine">{% if site.readerCount %}{{ site.readerCount }} &middot; {% endif %}No spam. Unsubscribe anytime.</p>
+    </section>
+
+    <div class="secline"><h2>This week</h2><span class="fine">{{ newest.date | fmtDate }}</span></div>
+    {{ lead(newest, site) }}
+
+    <div class="secline"><h2>More essays</h2><a href="/archive/">Full archive &rarr;</a></div>
+    <section class="grid">
+      {%- for e in essays.slice(1, 4) %}
+      {{ card(e, site) }}
+      {%- endfor %}
+    </section>
+
+    <div class="secline"><h2>About {{ site.author }}</h2><a href="/about/">Read more &rarr;</a></div>
+    <section class="aboutstrip">
+      {{ face(site, 'face') }}
+      <div class="t">
+        <p>{{ site.about }}</p>
+        <a class="backlink" style="margin:0" href="/about/">More about me &rarr;</a>
+      </div>
+    </section>
+
+    {{ cta(site, 'home') }}
+  </div>
