@@ -19,6 +19,9 @@
 
   "subscribeEndpoint": "https://buttondown.com/api/emails/embed-subscribe/hynes",
 
+  "_subscribeNote": "Shown under the box after someone signs up. Match it to your Buttondown confirmation setting.",
+  "subscribeNote": "Almost there — check your inbox to confirm.",
+
   "socials": [
     { "label": "LinkedIn", "url": "#" }
   ],
