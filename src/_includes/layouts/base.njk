@@ -5,6 +5,8 @@
   {%- set pageTitle = (topicLabel + ' — Archive — ' + site.wordmark) if topicLabel else ('Archive — ' + site.wordmark) -%}
 {%- elif pageKind == 'about' -%}
   {%- set pageTitle = 'About — ' + site.wordmark -%}
+{%- elif pageKind == 'welcome' -%}
+  {%- set pageTitle = 'Welcome — ' + site.wordmark -%}
 {%- elif pageKind == '404' -%}
   {%- set pageTitle = 'Not found — ' + site.wordmark -%}
 {%- else -%}
@@ -18,10 +20,11 @@
 <title>{{ pageTitle }}</title>
 <meta name="description" content="{{ pageDescription if pageDescription else site.description }}">
 <meta name="theme-color" content="#26241F">
-{% if site.hideFromSearch %}
-<!-- Pre-launch. Asks search engines not to list the site. Anyone you send the
-     link to can still read it — this only affects search results. Turn it off
-     by setting "hideFromSearch" to false in content/site.json. -->
+{% if site.hideFromSearch or noindex %}
+<!-- Asks search engines not to list this page. Anyone you send the link to can
+     still read it — this only affects search results. Set site-wide by
+     "hideFromSearch" in content/site.json, and always on for a page whose
+     front matter says noindex. -->
 <meta name="robots" content="noindex, nofollow">
 {% endif %}
 

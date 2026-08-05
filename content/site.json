@@ -51,5 +51,17 @@
     "Some weeks that's a project, a client, or the person you're meant to be handing the work to. Other weeks it's my kids. I've stopped trying to keep those separate, because the same thing is going on in both."
   ],
 
-  "signoff": "Cheers,"
+  "signoff": "Cheers,",
+
+  "_welcome": "The page people land on after clicking the confirm link in Buttondown's email. Point Buttondown's confirmation redirect at /welcome/.",
+  "welcome": {
+    "eyebrow": "Subscribed",
+    "heading": "You're in.",
+    "lede": "One essay, Sunday mornings. Nothing else, and one click to leave whenever you've had enough.",
+    "body": [
+      "Thanks for signing up. Most of what I write comes out of something that happened that week — a moment in a meeting I couldn't stop thinking about, a habit I caught myself in, a thing I got wrong and only noticed later.",
+      "The next one lands on Sunday. There's a bit to be going on with in the meantime."
+    ],
+    "readNext": "Start here"
+  }
 }

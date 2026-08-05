@@ -186,6 +186,28 @@ have to click a link in an email before they're really on the list. If you've
 switched confirmation **off**, something like `"You're on the list. See you
 Sunday."` is more accurate.
 
+### The welcome page
+
+When someone clicks the confirm link in Buttondown's email, they land on
+`/welcome/` — a short page that says they're in, sets expectations, and points
+them at three essays to read now. It has no subscribe box on it, deliberately.
+
+To make Buttondown send them there, set its confirmation redirect to:
+
+```
+https://on-purpose-tim.netlify.app/welcome/
+```
+
+In Buttondown that's under **Settings → Subscribing**. If there's no field for
+it on that screen, the setting is called `subscription_confirmation_redirect_url`
+and Buttondown's support will set it for you.
+
+The wording on the page lives in the `welcome` section of this file — heading,
+the line underneath, and the two paragraphs in the panel. Change it freely.
+
+The page stays out of search results permanently, even after launch, because it
+only makes sense to someone arriving from that email.
+
 ### Swapping in a real domain
 
 When you have a domain, change one line in `content/site.json`:

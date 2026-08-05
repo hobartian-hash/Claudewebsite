@@ -1,0 +1,37 @@
+---
+layout: layouts/base.njk
+---
+{#- Where people land after clicking the confirm link in Buttondown's email.
+
+    Built entirely from components already in the design: the page heading,
+    the about strip, the section rule and the essay cards.
+
+    NOTE: deliberately no subscribe panel. Everywhere else on the site ends
+    with one; this is the one page where the reader has just subscribed, and
+    asking again would be daft. -#}
+{%- from "partials/face.njk" import face -%}
+{%- from "partials/card.njk" import card -%}
+
+<div class="wrap">
+    <section class="pagehead">
+      <span class="eyebrow">{{ site.welcome.eyebrow }}</span>
+      <h1>{{ site.welcome.heading }}</h1>
+      <p>{{ site.welcome.lede }}</p>
+    </section>
+
+    <section class="aboutstrip">
+      {{ face(site, 'face') }}
+      <div class="t">
+        {%- for p in site.welcome.body %}
+        <p>{{ p }}</p>
+        {%- endfor %}
+      </div>
+    </section>
+
+    <div class="secline"><h2>{{ site.welcome.readNext }}</h2><a href="/archive/">Full archive &rarr;</a></div>
+    <section class="grid">
+      {%- for e in essays.slice(0, 3) %}
+      {{ card(e, site) }}
+      {%- endfor %}
+    </section>
+  </div>
