@@ -18,6 +18,12 @@
 <title>{{ pageTitle }}</title>
 <meta name="description" content="{{ pageDescription if pageDescription else site.description }}">
 <meta name="theme-color" content="#26241F">
+{% if site.hideFromSearch %}
+<!-- Pre-launch. Asks search engines not to list the site. Anyone you send the
+     link to can still read it — this only affects search results. Turn it off
+     by setting "hideFromSearch" to false in content/site.json. -->
+<meta name="robots" content="noindex, nofollow">
+{% endif %}
 
 <!-- Declare the colour scheme explicitly. Without these, iOS Safari and some
      Android browsers auto-darken any page they think is "light by accident":

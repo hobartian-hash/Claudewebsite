@@ -3,6 +3,9 @@
 
   "baseUrl": "https://profound-crisp-5e9b59.netlify.app",
 
+  "_hideFromSearch": "true = ask Google and the others not to list the site. Set it to false on launch day.",
+  "hideFromSearch": true,
+
   "description": "One short essay every Sunday about the things that only happen deliberately — at work, at home, and in the gap between the two.",
 
   "author": "Tim",
