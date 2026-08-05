@@ -1,7 +1,7 @@
 {
   "_comment": "Everything about the site that isn't an essay. Edit this file, not anything in src/.",
 
-  "baseUrl": "https://profound-crisp-5e9b59.netlify.app",
+  "baseUrl": "https://on-purpose-tim.netlify.app",
 
   "_hideFromSearch": "true = ask Google and the others not to list the site. Set it to false on launch day.",
   "hideFromSearch": true,
