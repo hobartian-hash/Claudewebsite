@@ -173,6 +173,19 @@ address out of its `action="..."`. Paste that into `subscribeEndpoint`:
 
 Push, and the forms start working.
 
+Once someone signs up they stay on your site, and a short line appears under
+the box. You can change what it says:
+
+```json
+"subscribeNote": "Almost there — check your inbox to confirm."
+```
+
+Word it to match your Buttondown setting. If you have confirmation emails
+switched **on** (Buttondown's default), the wording above is right — they still
+have to click a link in an email before they're really on the list. If you've
+switched confirmation **off**, something like `"You're on the list. See you
+Sunday."` is more accurate.
+
 ### Swapping in a real domain
 
 When you have a domain, change one line in `content/site.json`:

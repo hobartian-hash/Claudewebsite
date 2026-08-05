@@ -1,7 +1,7 @@
 {
   "_comment": "Everything about the site that isn't an essay. Edit this file, not anything in src/.",
 
-  "baseUrl": "https://profound-crisp-5e9b59.netlify.app",
+  "baseUrl": "https://on-purpose-tim.netlify.app",
 
   "_hideFromSearch": "true = ask Google and the others not to list the site. Set it to false on launch day.",
   "hideFromSearch": true,
@@ -18,6 +18,9 @@
   "readerCount": "",
 
   "subscribeEndpoint": "https://buttondown.com/api/emails/embed-subscribe/hynes",
+
+  "_subscribeNote": "Shown under the box after someone signs up. Match it to your Buttondown confirmation setting.",
+  "subscribeNote": "Almost there — check your inbox to confirm.",
 
   "socials": [
     { "label": "LinkedIn", "url": "#" }
