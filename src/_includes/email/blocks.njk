@@ -1,0 +1,94 @@
+{#- =========================================================
+    EMAIL BLOCKS
+
+    One macro per block type. The markup is copied from the tested
+    v2 template — if you change anything here, re-test in Gmail and
+    Outlook on a phone before you send.
+
+    Every macro emits a complete <tr>, because the whole email is
+    one table and each block is a row of it.
+    ========================================================= -#}
+
+{#- A run of ordinary prose. `html` is already inline-styled by
+    lib/render-email.js. `pad` is the top padding, which changes
+    depending on what came before this run.
+
+    `signoffText` is only passed to the last run in the essay. One line,
+    italic, secondary grey — kept quiet on purpose, because the essays
+    end on a question and a loud sign-off competes with it.
+
+    NOTE: no drop cap. The website has one on the first paragraph; the
+    email deliberately does not. Don't add one. -#}
+{% macro prose(html, pad, signoffText) -%}
+    <tr><td class="pad body-copy" style="padding:{{ pad }}px 60px 0 60px;
+             font-family:'Newsreader',Georgia,'Times New Roman',serif;
+             font-size:18px; line-height:1.75; color:#26241F;">
+
+{{ html | safe }}
+{%- if signoffText %}
+      <p style="margin:32px 0 0 0; font-family:'Newsreader',Georgia,'Times New Roman',serif;
+                font-style:italic; font-size:18px; color:#6B665D;">{{ signoffText }}</p>
+{%- endif %}
+    </td></tr>
+{%- endmacro %}
+
+{#- Pull quote. Two cells: a 3px brass bar, then the panel. The bar is
+    what makes this survive dark-mode inversion — the #E7E3DB panel on
+    its own would collapse into the surrounding paper. -#}
+{% macro quote(html) -%}
+    <!-- ---------- PULL QUOTE ---------- -->
+    <tr><td class="pad" style="padding:8px 60px 0 60px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td width="3" style="background-color:#C08A3E; font-size:0; line-height:0;">&nbsp;</td>
+          <td style="background-color:#E7E3DB; padding:24px 26px;">
+            <div class="quote" style="font-family:'Newsreader',Georgia,serif; font-size:23px; line-height:1.4; color:#26241F;">
+              {{ html | safe }}
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td></tr>
+{%- endmacro %}
+
+{#- 2x2 figure. A real table, so it keeps its shape everywhere including
+    Outlook.
+
+    THE ACTIVE CELL IS BRASS, NOT DARK. This is not a style preference.
+    Dark fills invert to roughly the same grey as the light cells, which
+    erases the highlight entirely — the whole point of the figure. Brass
+    is a mid-tone, so inversion barely touches it. The website does use
+    the dark ink fill, because the site controls its own head. -#}
+{% macro figure(title, cells, active, caption) -%}
+    <!-- ---------- 2x2 FIGURE ---------- -->
+    <tr><td class="pad" style="padding:14px 60px 0 60px;">
+      {%- if title %}
+      <div style="font-family:Helvetica,Arial,sans-serif; font-size:10px; letter-spacing:2px;
+                  text-transform:uppercase; color:#6B665D; padding-bottom:12px;">{{ title }}</div>
+      {%- endif %}
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #DDD8CF;">
+        <tr>
+          {%- for i in [0, 1] %}
+          <td class="cell-2x2" width="50%" style="{% if i == 0 %}border-right:1px solid #DDD8CF; {% endif %}border-bottom:1px solid #DDD8CF;
+                     padding:18px 16px; font-family:Helvetica,Arial,sans-serif; font-size:14px; {% if i == active %}font-weight:bold; color:#26241F; background-color:#C08A3E;{% else %}color:#26241F;{% endif %}">
+            <span style="color:{{ '#5C4210' if i == active else '#6B665D' }};">{{ i + 1 }}.</span>&nbsp; {{ cells[i] }}
+          </td>
+          {%- endfor %}
+        </tr>
+        <tr>
+          {%- for i in [2, 3] %}
+          <td class="cell-2x2" width="50%" style="{% if i == 2 %}border-right:1px solid #DDD8CF; {% endif %}padding:18px 16px;
+                     font-family:Helvetica,Arial,sans-serif; font-size:14px; {% if i == active %}font-weight:bold; color:#26241F; background-color:#C08A3E;{% else %}color:#26241F;{% endif %}">
+            <span style="color:{{ '#5C4210' if i == active else '#6B665D' }};">{{ i + 1 }}.</span>&nbsp; {{ cells[i] }}
+          </td>
+          {%- endfor %}
+        </tr>
+      </table>
+      {%- if caption %}
+      <div style="font-family:'Newsreader',Georgia,serif; font-style:italic; font-size:14px;
+                  color:#6B665D; padding-top:12px;">
+        {{ caption | safe }}
+      </div>
+      {%- endif %}
+    </td></tr>
+{%- endmacro %}

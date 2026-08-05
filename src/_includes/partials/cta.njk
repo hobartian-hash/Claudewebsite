@@ -1,0 +1,12 @@
+{# The dark subscribe panel. One per page, at the bottom. #}
+{% from "partials/subform.njk" import subform %}
+
+{% macro cta(site, id) -%}
+<section class="cta">
+      <span class="eyebrow">Join the list</span>
+      <h2>Something worth reading on a <em>{{ site.publishDay }}</em>.</h2>
+      <p>{% if site.readerCount %}{{ site.readerCount }}. {% endif %}One essay a week. Free, and easy to leave.</p>
+      {{ subform(site, 'sub-' + id) }}
+      <p class="fine">No spam. Unsubscribe anytime.</p>
+    </section>
+{%- endmacro %}

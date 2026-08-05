@@ -1,0 +1,12 @@
+---
+# One real page per topic, so the archive filters work with JavaScript off.
+pagination:
+  data: site.topics
+  size: 1
+  alias: topic
+layout: layouts/archive.njk
+permalink: "/archive/{{ topic }}/"
+pageKind: archive
+eleventyComputed:
+  topicLabel: "{{ site.topics[topic] }}"
+---

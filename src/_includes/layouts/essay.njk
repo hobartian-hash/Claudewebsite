@@ -1,0 +1,42 @@
+---
+layout: layouts/base.njk
+---
+{%- from "partials/cta.njk" import cta -%}
+{%- from "partials/card.njk" import card -%}
+
+<article>
+    <div class="wrap">
+      <div class="measure essayhead">
+        <span class="pill">{{ essay.topic | topicName(site.topics) }}</span>
+        <h1>{{ essay.title }}</h1>
+        <div class="byline">
+          <span>By {{ site.author }}</span><i>&middot;</i>
+          <span>{{ essay.date | fmtDate }}</span><i>&middot;</i>
+          <span>{{ essay.readTime }} min read</span><i>&middot;</i>
+          <span>Issue No.&nbsp;{{ essay.number | pad }}</span>
+        </div>
+        <div class="headrule"></div>
+      </div>
+
+      {#- The drop cap comes from .prose > p:first-of-type, so the rendered
+          body has to be a direct child here. Website only — the email
+          deliberately has none. -#}
+      <div class="measure prose">
+        {{ essay.body | safe }}
+        <p class="signoff">{{ site.signoff }} {{ site.author }}</p>
+        <p class="follow">If this was useful, forward it to someone who'd get something out of it. Shorter thoughts during the week:
+          {% for s in site.socials %}<a href="{{ s.url }}">{{ s.label }}</a>{% if not loop.last %} and {% endif %}{% endfor %}.</p>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="secline"><h2>Read next</h2><a href="/archive/">Full archive &rarr;</a></div>
+      <section class="grid">
+        {%- for e in essays | related(essay) %}
+        {{ card(e, site) }}
+        {%- endfor %}
+      </section>
+      <p><a class="backlink" href="/archive/">&larr; Back to the archive</a></p>
+      {{ cta(site, 'essay') }}
+    </div>
+  </article>

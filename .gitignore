@@ -1,5 +1,7 @@
 node_modules/
+_site/
 dist/
 build/
 .env
 .DS_Store
+.netlify/

@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+---
+{#- The topic chips are real links to real pages, so filtering works with
+    JavaScript turned off. The mockup filtered client-side; that was a
+    prototype convenience, not the design. -#}
+{%- from "partials/cta.njk" import cta -%}
+{%- from "partials/card.njk" import card -%}
+{%- set list = essays | byTopic(topic) -%}
+
+<div class="wrap">
+    <section class="pagehead">
+      <span class="eyebrow">{{ essays.length }} issues &middot; published {{ site.publishDay }}s</span>
+      <h1>The archive</h1>
+      <p>Everything so far, newest first. Pick a topic if you're after something in particular.</p>
+    </section>
+
+    <div class="filters">
+      <a class="filter" href="/archive/"{% if not topic %} aria-current="page"{% endif %}>All</a>
+      {%- for key, name in site.topics %}
+      <a class="filter" href="/archive/{{ key }}/"{% if topic == key %} aria-current="page"{% endif %}>{{ name }}</a>
+      {%- endfor %}
+    </div>
+
+    {%- if list.length %}
+    <section class="grid">
+      {%- for e in list %}
+      {{ card(e, site) }}
+      {%- endfor %}
+    </section>
+    {%- else %}
+    <p class="empty">Nothing under this topic yet. Try another, or read the <a href="/archive/">full archive</a>.</p>
+    {%- endif %}
+
+    {{ cta(site, 'arch') }}
+  </div>

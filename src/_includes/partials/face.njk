@@ -1,0 +1,10 @@
+{# The masthead / hero avatar. A photo if site.photo is set, a lettered
+   circle if not. It is currently unset, and the design is built to ship
+   that way — the circle is not a fallback, it's the default. #}
+{% macro face(site, cls) -%}
+{%- if site.photo -%}
+<img class="{{ cls }}" src="{{ site.photo }}" alt="{{ site.author }}">
+{%- else -%}
+<span class="{{ cls }}">{{ site.initials }}</span>
+{%- endif -%}
+{%- endmacro %}

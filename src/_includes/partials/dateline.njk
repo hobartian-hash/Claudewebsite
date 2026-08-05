@@ -1,0 +1,9 @@
+{# The weekend-edition dateline. Publish day, the newest issue's number
+   and date, and the place. This is the signature that makes the site
+   read as an edition rather than a feed. #}
+{% set newest = essays[0] %}
+<div class="dateline">
+      <span>{{ site.publishDay }} Edition</span>
+      <span>Issue No.&nbsp;{{ newest.number | pad }} &middot; {{ newest.date | fmtShort }}</span>
+      <span>{{ site.place }}</span>
+    </div>

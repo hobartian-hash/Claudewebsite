@@ -1,0 +1,13 @@
+{% from "partials/face.njk" import face %}
+<header class="masthead">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="/">{{ face(site, 'avatar') }}<b>{{ site.wordmark }}{% if site.strapline %}<span class="strapline">{{ site.strapline }}</span>{% endif %}</b></a>
+      <nav class="mainnav">
+        <a href="/archive/"{% if pageKind == 'archive' %} aria-current{% endif %}>Archive</a>
+        <a href="/about/"{% if pageKind == 'about' %} aria-current{% endif %}>About</a>
+      </nav>
+    </div>
+    {% include "partials/dateline.njk" %}
+  </div>
+</header>

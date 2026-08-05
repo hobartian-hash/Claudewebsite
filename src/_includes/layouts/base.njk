@@ -1,0 +1,52 @@
+{%- if pageKind == 'essay' -%}
+  {%- set pageTitle = essay.title + ' — ' + site.author -%}
+  {%- set pageDescription = essay.hook -%}
+{%- elif pageKind == 'archive' -%}
+  {%- set pageTitle = (topicLabel + ' — Archive — ' + site.wordmark) if topicLabel else ('Archive — ' + site.wordmark) -%}
+{%- elif pageKind == 'about' -%}
+  {%- set pageTitle = 'About — ' + site.wordmark -%}
+{%- elif pageKind == '404' -%}
+  {%- set pageTitle = 'Not found — ' + site.wordmark -%}
+{%- else -%}
+  {%- set pageTitle = site.wordmark + ' — ' + site.author -%}
+{%- endif -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ pageTitle }}</title>
+<meta name="description" content="{{ pageDescription if pageDescription else site.description }}">
+<meta name="theme-color" content="#26241F">
+
+<!-- Declare the colour scheme explicitly. Without these, iOS Safari and some
+     Android browsers auto-darken any page they think is "light by accident":
+     backgrounds get inverted, text colours don't, and the copy disappears.
+     Declaring light stops the browser guessing. The design is a warm paper
+     one; a proper dark theme would need its own palette, not an inversion. -->
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+
+<link rel="canonical" href="{{ site.baseUrl }}{{ page.url }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+{% if pageKind == 'essay' %}<div id="progress"></div>{% endif %}
+
+{% include "partials/masthead.njk" %}
+
+<main>
+{{ content | safe }}
+</main>
+
+{% include "partials/footer.njk" %}
+
+<script src="/js/subscribe.js" defer></script>
+{% if pageKind == 'essay' %}<script src="/js/progress.js" defer></script>{% endif %}
+</body>
+</html>

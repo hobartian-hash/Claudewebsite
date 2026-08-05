@@ -1,0 +1,13 @@
+{# Subscribe form.
+
+   When content/site.json has a subscribeEndpoint, the action and method
+   are baked into the markup, so the form works with JavaScript off. When
+   it's empty there is nowhere to post, and src/js/subscribe.js says so
+   in the note below the form rather than pretending it worked. #}
+{% macro subform(site, id, label="Subscribe free") -%}
+<form class="subform" data-sub novalidate{% if site.subscribeEndpoint %} action="{{ site.subscribeEndpoint }}" method="post"{% endif %}>
+      <label class="sr" for="{{ id }}">Email address</label>
+      <input id="{{ id }}" type="email" name="email" placeholder="you@company.com" required autocomplete="email">
+      <button type="submit">{{ label }}</button>
+    </form><p class="formnote" hidden></p>
+{%- endmacro %}

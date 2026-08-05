@@ -1,0 +1,22 @@
+{
+  "name": "on-purpose",
+  "version": "1.0.0",
+  "private": true,
+  "description": "On Purpose — a weekly essay newsletter by Tim, Hobart, Tasmania.",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "eleventy --serve",
+    "clean": "node -e \"require('fs').rmSync('_site',{recursive:true,force:true})\"",
+    "build": "npm run clean && eleventy",
+    "email": "node scripts/build-email.js"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^15.0.0",
+    "nunjucks": "^3.2.4"
+  }
+}
