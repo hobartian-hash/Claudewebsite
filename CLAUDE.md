@@ -50,8 +50,11 @@ mistake, ask before changing it.
 Plus Jakarta Sans for interface. Reading column capped at 36rem.
 
 **No images.** This is a deliberate constraint, not an oversight. The only photo
-anywhere is Tim's face in the masthead, currently unset, with a lettered-circle
-fallback that must keep working. Colour comes from type, rules and dark panels.
+anywhere is Tim's face, now set (`site.photo` → `/tim.jpg`), with a
+lettered-circle fallback that must keep working — clearing `photo` must always
+put the `T` circle back. Setting it turns the face on in four places, not just
+the masthead: the masthead avatar on every page, the home hero, the home about
+strip and the About page lead. Colour comes from type, rules and dark panels.
 Never add stock photography or illustration.
 
 **Signature elements** — the weekend-edition dateline under the masthead; a drop
