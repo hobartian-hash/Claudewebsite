@@ -49,8 +49,17 @@ anything in `src/`. Adding an essay must stay a one-file change.
 `src/css/style.css` came from a signed-off mockup and is the specification, not
 a starting point. Do not propose alternative palettes, typefaces, layouts or
 components. Do not add stock photography or illustration — the absence of
-images is a deliberate constraint. Two adaptations are marked `ADAPTED` in the
-stylesheet (the archive filters became links); everything else is verbatim.
+images is a deliberate constraint.
+
+Everything is verbatim except the changes marked `ADAPTED`, each of which
+carries its reason inline:
+
+- the archive filters became real links rather than buttons (two rules)
+- the footer is held to the bottom of short pages, which the mockup had none of
+
+Home, archive and archive-by-topic render pixel-identical to the mockup at
+1200px. If you touch the stylesheet, re-check that they still do — screenshot
+both and compare, don't eyeball it.
 
 ## The email has rules that were learned the hard way
 
