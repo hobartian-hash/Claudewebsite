@@ -17,7 +17,7 @@
   "publishDay": "Sunday",
   "readerCount": "",
 
-  "subscribeEndpoint": "",
+  "subscribeEndpoint": "https://buttondown.com/api/emails/embed-subscribe/hynes",
 
   "socials": [
     { "label": "LinkedIn", "url": "#" }
