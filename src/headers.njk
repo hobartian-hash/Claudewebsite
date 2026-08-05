@@ -1,0 +1,11 @@
+---
+permalink: /_headers
+eleventyExcludeFromCollections: true
+---
+{%- if site.hideFromSearch -%}
+# Pre-launch. Sends a "don't list this" instruction with every page, which is
+# the belt to the meta tag's braces — it also covers anything that isn't a web
+# page. Switch it off by setting "hideFromSearch" to false in content/site.json.
+/*
+  X-Robots-Tag: noindex, nofollow
+{%- endif %}

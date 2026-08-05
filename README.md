@@ -140,6 +140,24 @@ which is usually the one you want.
 All of these live in **`content/site.json`**. That file and the `content/essays/`
 folder are the only two things you ever need to open.
 
+### Letting Google find the site
+
+Until you're ready to launch, the site asks search engines not to list it:
+
+```json
+"hideFromSearch": true
+```
+
+Anyone you send the link to can still read everything — this only affects
+whether the site turns up in search results.
+
+On launch day, change it to `false` and push. That's the whole job.
+
+A word on how this works, so it isn't a mystery: search engines find sites by
+following links from other sites. Nothing links to yours yet, so nobody was
+going to stumble on it anyway. This setting is the belt to that braces, and it
+matters from the moment you first post the link anywhere.
+
 ### Connecting the subscribe forms
 
 Right now the forms on the site don't go anywhere. If someone types their
