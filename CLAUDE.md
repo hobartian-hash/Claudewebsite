@@ -61,6 +61,18 @@ Never add stock photography or illustration.
 cap opening each essay **on the website only**; the newest essay in a dark lead
 panel on the home page, chosen by date; the reusable 2×2 figure block.
 
+**Links inside essays never change colour.** Decided by Tim, and it overrides
+the older "slate blue — links, tags" note on `--accent`. Link text stays ink and
+is marked by a **brass underline** on the web (1.5px, 3px offset, thickening to
+ink on hover), so emphasis comes from the palette's existing emphasis colour
+rather than a second text colour. `--accent` is still the link colour everywhere
+outside `.prose` — the archive, cards, backlinks and follow lines are unchanged.
+
+**Every link opens in a new tab**, on the site and in the email, so a reader
+mid-essay never loses their place. The web renderer also sets
+`rel="noopener noreferrer"`. This applies to internal links too, not only
+outbound ones — asked for as "any link", and not worth a special case.
+
 **Topics are fixed at five**: Work, Coaching, Career, Fathering, Off the Clock.
 Do not make them extensible.
 
@@ -95,6 +107,12 @@ Consequences that must not be reverted:
   nothing and works if Tim moves to Naked mode or another provider.
 - `{{ unsubscribe_url }}` appears exactly once. Buttondown requires it.
 - **No drop cap in the email.** Website only. Decided deliberately.
+- **Email links get a plain underline, not a brass one.** `text-decoration-color`
+  is not understood by Outlook's Word engine, and a link that loses its underline
+  loses its only signal. Ink text also agrees with Buttondown's global tint
+  (`#26241F`), so this doesn't fight a setting the template can't win against.
+  Under forced inversion ink flips together with the body text around it and the
+  underline survives — which is the whole point.
 
 Buttondown overrides link colour globally via the tint colour in Settings →
 General → Branding, currently `#26241F`. Don't fight it in the template.
@@ -112,6 +130,12 @@ General → Branding, currently `#26241F`. Don't fight it in the template.
 - `previewText` is the inbox preview line and is always authored by hand. It
   matters more for opens than anything else in the email. Never auto-generate it.
 - 2×2 figure `active` is **1-indexed** in the authoring format.
+- **Links are written as ordinary markdown**, `[the words](https://…)`, in body
+  prose and inside `{% quote %}`. They do **not** work in 2×2 figure cells —
+  cell text is escaped and would print the brackets literally. Bare URLs are not
+  auto-linked (`linkify` is off in both renderers, deliberately, so a stray URL
+  in a draft never silently becomes a link) — always use the bracket form.
+  Internal links must be built from `site.baseUrl`, never hard-coded.
 
 ---
 
