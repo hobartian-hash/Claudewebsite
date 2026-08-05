@@ -1,103 +1,143 @@
 # CLAUDE.md
 
-Guidance for Claude Code when working in this repository.
+Project memory for **On Purpose** — a weekly essay newsletter by Tim, Hobart.
+One essay every Sunday, published to a website and sent by email.
 
-## What this is
+> This file holds **decisions**, not facts about the code. The facts section at
+> the bottom is filled in by reading the repo. If code and this file disagree,
+> ask — don't silently pick a side.
 
-**On Purpose** — a weekly essay newsletter by Tim (Hobart, Tasmania). This repo
-is the website plus the machinery that turns one markdown file into both a web
-page and a paste-ready email. Sending is manual; there is no API integration.
+---
 
-`README.md` is written for Tim, who is not a developer. Keep it that way — plain
-English, no jargon, no assumed memory of any conversation.
+## Prime directive
 
-## Commands
+The site exists to get one essay published every Sunday with as little friction
+as possible. Publishing friction is the only thing that will kill this project.
 
-```
-npm start              dev server with live reload (localhost:8080)
-npm run build          clean build of the website into _site/
-npm run email -- 001   writes dist/email/001.html, paste-ready for Buttondown
-```
+When trading off, rank in this order:
 
-`npm run email` with no argument builds the newest essay.
+1. Does it keep the weekly publish working?
+2. Does it reduce friction in the weekly loop?
+3. Is it a reader-facing bug?
+4. Everything else — probably not now.
 
-## Stack
+Tim is not a developer. He is the product owner. Favour boring, stable, few
+moving parts over anything clever. Every dependency is something he will one
+day have to update alone.
 
-Eleventy 3 + Nunjucks. Node and npm, nothing else — no bundler, no CSS
-framework, no preprocessor. Four dependencies: `@11ty/eleventy`, `markdown-it`,
-`gray-matter`, `nunjucks`. Netlify deploys from a push to the default branch.
+---
 
-Do not substitute a framework, add a build step, or introduce dependencies
-without a concrete reason. Every dependency is one Tim will have to update.
+## The design is finished. Do not redesign it.
 
-## Structure
+The palette, typography and layout were worked through carefully and signed off.
+Treat them as fixed constraints, not suggestions. If something looks like a
+mistake, ask before changing it.
 
-```
-content/essays/*.md    THE source of truth. One file per essay.
-content/site.json      everything about the site that isn't an essay
-lib/                   shared: block parser, web renderer, email renderer
-src/_includes/         layouts, partials, and the email template
-src/css/style.css      the design, lifted from the signed-off mockup
-scripts/build-email.js the email builder
-```
+**Palette**
 
-Everything Tim touches weekly lives in `content/`. He should never need to open
-anything in `src/`. Adding an essay must stay a one-file change.
+| Role | Hex |
+|---|---|
+| Background (paper) | `#F1EFEA` |
+| Raised surfaces | `#FAF8F4` |
+| Ink | `#26241F` |
+| Secondary text | `#6B665D` |
+| Hairlines | `#DDD8CF` |
+| Accent (slate) | `#3F6E8C` |
+| Brass (emphasis only) | `#C08A3E` |
+| Panel fill (email quote / sponsor) | `#E7E3DB` |
 
-## The design is finished
+**Type** — DM Serif Display for titles, Newsreader for essay body at 19px/1.75,
+Plus Jakarta Sans for interface. Reading column capped at 36rem.
 
-`src/css/style.css` came from a signed-off mockup and is the specification, not
-a starting point. Do not propose alternative palettes, typefaces, layouts or
-components. Do not add stock photography or illustration — the absence of
-images is a deliberate constraint.
+**No images.** This is a deliberate constraint, not an oversight. The only photo
+anywhere is Tim's face in the masthead, currently unset, with a lettered-circle
+fallback that must keep working. Colour comes from type, rules and dark panels.
+Never add stock photography or illustration.
 
-Everything is verbatim except the changes marked `ADAPTED`, each of which
-carries its reason inline:
+**Signature elements** — the weekend-edition dateline under the masthead; a drop
+cap opening each essay **on the website only**; the newest essay in a dark lead
+panel on the home page, chosen by date; the reusable 2×2 figure block.
 
-- the archive filters became real links rather than buttons (two rules)
-- the footer is held to the bottom of short pages, which the mockup had none of
+**Topics are fixed at five**: Work, Coaching, Career, Fathering, Off the Clock.
+Do not make them extensible.
 
-Home, archive and archive-by-topic render pixel-identical to the mockup at
-1200px. If you touch the stylesheet, re-check that they still do — screenshot
-both and compare, don't eyeball it.
+---
 
-## The email has rules that were learned the hard way
+## Email rules — learned by testing, not by preference
 
-Read the header comment in `src/_includes/email/head.njk` before changing
-anything on the email side. The short version:
+The email template is table-based with inline styles. **It looks like 2004 on
+purpose.** Outlook renders email with Word's engine and ignores modern CSS.
+Never refactor it to divs and classes.
 
-> Buttondown's free plan strips the `<head>`, so the `<style>` block never
-> reaches the inbox and every tested client force-inverts the email. **Encode
-> meaning with hue and rules, never with light-versus-dark.** Brass (`#C08A3E`)
-> and hairline borders survive inversion. Ink (`#26241F`) and paper (`#F1EFEA`)
-> both collapse toward the same mid grey.
+Buttondown's free plan strips the `<head>`, so the `<style>` block and the
+colour-scheme meta tags never reach the inbox. Every client tested — iOS Gmail,
+iOS Outlook, iPad Gmail — force-inverts the email in dark mode.
+
+> **Encode meaning with hue and rules, never with light-versus-dark.**
+> Inversion remaps lightness and mostly leaves hue alone. Brass (`#C08A3E`) and
+> hairline borders survive everywhere. Ink and paper sit at opposite extremes
+> and both collapse toward the same mid grey, so anything relying on the
+> contrast between those two disappears.
 
 Consequences that must not be reverted:
 
-- The active 2×2 cell is **brass** in the email and **dark ink** on the website.
-  This is not a style preference.
-- The subscribe panel keeps its dark fill *and* a 2px brass border.
-- The outer `#F1EFEA` background stays, seam and all. The trade-off is
-  documented inline at that line.
-- The `<style>` block stays even though it is currently stripped.
-- Table-based layout with inline styles throughout. **Do not refactor to divs
-  and classes.** It looks like 2004 because that is what renders in Outlook.
+- Active 2×2 cell in the email: **brass fill**, not dark fill. (Dark fill was
+  tested and made the highlight vanish entirely.)
+- Subscribe panel: dark fill **plus** a 2px brass border, so it still reads as a
+  panel once the fill inverts.
+- The outer `#F1EFEA` background stays, despite a faint seam against
+  Buttondown's wrapper in dark mode. Losing the warm paper in light mode is the
+  worse trade.
+- The `<style>` block stays even though it's currently stripped. It costs
+  nothing and works if Tim moves to Naked mode or another provider.
 - `{{ unsubscribe_url }}` appears exactly once. Buttondown requires it.
-- The website has a drop cap on the first paragraph. The email deliberately
-  does not. Don't add one.
+- **No drop cap in the email.** Website only. Decided deliberately.
 
-`dist/email/001.html` should stay within a hairline of the tested v2 template
-apart from URL substitution. If you change the email renderer, diff against it.
+Buttondown overrides link colour globally via the tint colour in Settings →
+General → Branding, currently `#26241F`. Don't fight it in the template.
 
-## Other invariants
+---
 
-- Topics are fixed at five: `work`, `coaching`, `career`, `fathering`,
-  `offclock`. Do not make them extensible.
-- Archive topic filtering must work with JavaScript disabled — real pages, real
-  links.
-- No absolute URL may be hard-coded outside `content/site.json`. There is no
-  domain yet; `baseUrl` must stay the single place it lives.
-- Essay text is finished writing. Convert it, don't edit it — no rewording, no
-  "fixing" Australian spellings or em-dash style.
-- Out of scope: Buttondown API, analytics, comments, search, RSS, paid
-  subscriptions.
+## Content rules
+
+- **Essay text is finished writing.** Convert and render it; never reword, never
+  "fix" Australian spellings or em-dash style, never touch a typo without asking.
+- **Paragraphing house style is short** — the email's rhythm, applied to both
+  site and email. One source file, one paragraphing.
+- `hook` is the site version. `emailHook` is the trimmed version for the email
+  subtitle, falling back to `hook` if absent.
+- `previewText` is the inbox preview line and is always authored by hand. It
+  matters more for opens than anything else in the email. Never auto-generate it.
+- 2×2 figure `active` is **1-indexed** in the authoring format.
+
+---
+
+## Working conventions
+
+- **Small, single-purpose pull requests.** One backlog item per task. A large PR
+  is not reviewable by a non-developer, which defeats the point.
+- Explain changes in plain English in the PR description. Assume no memory of
+  any previous session.
+- No new dependencies without asking first.
+- Absolute URLs live behind a single config value. A domain is coming in a month
+  or so; swapping it must be a config change, not a find-and-replace.
+- Don't hard-code the `netlify.app` URL anywhere outside that config.
+
+---
+
+## Open questions — do not decide these unilaterally
+
+- Whether the `list` block type is kept or dropped. No essay uses one yet.
+- Whether `readTime` should be calculated rather than authored by hand.
+- Whether the site needs an RSS feed.
+
+---
+
+## Repo facts
+
+<!-- TO BE FILLED IN BY THE FIRST SESSION.
+     Read the repo and document: stack and version, folder layout, the commands
+     and what each does, where essays live and their frontmatter schema, how the
+     email output is produced, how deploys happen.
+     Also list anything in the repo that contradicts the decisions above —
+     but change nothing. Tim will say which were deliberate. -->
