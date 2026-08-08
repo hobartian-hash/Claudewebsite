@@ -13,3 +13,7 @@ eleventyExcludeFromCollections: true
 # stays out of search results even after the rest of the site goes in.
 /welcome/*
   X-Robots-Tag: noindex, nofollow
+
+# Fonts never change; if one ever must, it gets a new filename.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
