@@ -55,7 +55,10 @@ lettered-circle fallback that must keep working — clearing `photo` must always
 put the `T` circle back. Setting it turns the face on in four places, not just
 the masthead: the masthead avatar on every page, the home hero, the home about
 strip and the About page lead. Colour comes from type, rules and dark panels.
-Never add stock photography or illustration.
+Never add stock photography or illustration. The second sanctioned use of the
+photo is the favicon set (`src/static/favicon.ico`, `icon-192.png`,
+`icon-512.png`, `apple-touch-icon.png`), derived from `tim.jpg` — square
+crops, no circular masking, no recolouring.
 
 **Signature elements** — the weekend-edition dateline under the masthead; a drop
 cap opening each essay **on the website only**; the newest essay in a dark lead
