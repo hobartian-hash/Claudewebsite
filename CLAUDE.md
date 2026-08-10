@@ -55,13 +55,31 @@ from Google Fonts, since email clients can't reach locally-hosted files.
 **No images.** This is a deliberate constraint, not an oversight. The only photo
 anywhere is Tim's face, now set (`site.photo` → `/tim.jpg`), with a
 lettered-circle fallback that must keep working — clearing `photo` must always
-put the `T` circle back. Setting it turns the face on in four places, not just
+put the `T` circle back. Setting it turns the face on in five places, not just
 the masthead: the masthead avatar on every page, the home hero, the home about
-strip and the About page lead. Colour comes from type, rules and dark panels.
-Never add stock photography or illustration. The second sanctioned use of the
-photo is the favicon set (`src/static/favicon.ico`, `icon-192.png`,
-`icon-512.png`, `apple-touch-icon.png`), derived from `tim.jpg` — square
-crops, no circular masking, no recolouring.
+strip, the About page lead and the Welcome page. Colour comes from type, rules
+and dark panels. Never add stock photography or illustration. The second
+sanctioned use of the photo is the favicon set (`src/static/favicon.ico`,
+`icon-192.png`, `icon-512.png`, `apple-touch-icon.png`), derived from the same
+portrait — square crops, no circular masking, no recolouring.
+
+**The portrait is a duotone stipple** — navy ink on cream paper, in the
+engraved/hedcut register, chosen to read as ink on paper like everything else
+on the site. Two rules follow from it and were decided deliberately:
+
+- **The navy is not a palette colour and is not to be corrected to slate.**
+  Recolouring a halftone wrecks it. It is the one sanctioned colour on the site
+  that isn't in the table above.
+- **It is only ever shown in a circle.** The source is a 1:2 portrait; every
+  placement crops it square and masks it round. A rectangular placement was
+  considered and rejected — the artwork's paper (`#F8ECDC`) is warmer and
+  lighter than the site's (`#F1EFEA`), so shown as a rectangle it reads as a
+  patch on the page. Inside a circle the difference is invisible.
+
+Because the portrait is cream-on-cream, a photo circle has no edge of its own
+against the page. The circles carry a 1px `--line` hairline (`box-shadow`, so
+no geometry changes) scoped to `img` — the lettered fallback is a solid slate
+fill and keeps its original edgeless treatment.
 
 **Signature elements** — the weekend-edition dateline under the masthead; a drop
 cap opening each essay **on the website only**; the newest essay in a dark lead
@@ -101,6 +119,11 @@ Consequences that must not be reverted:
   nothing and works if Tim moves to Naked mode or another provider.
 - `{{ unsubscribe_url }}` appears exactly once. Buttondown requires it.
 - **No drop cap in the email.** Website only. Decided deliberately.
+- **No portrait in the email.** Clients invert background colours but leave
+  images alone, so the cream-paper portrait would sit in a dark-mode inbox as a
+  bright rectangle. A transparent-background version inverts the other way and
+  loses the navy ink into the dark. Considered and rejected — the email is
+  type-only.
 
 Buttondown overrides link colour globally via the tint colour in Settings →
 General → Branding, currently `#26241F`. Don't fight it in the template.
