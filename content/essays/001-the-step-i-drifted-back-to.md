@@ -4,7 +4,6 @@ slug:        "the-step-i-drifted-back-to"
 number:      1
 topic:       "coaching"
 date:        2026-08-09
-readTime:    5
 hook:        "Five months in, I should have been at step three. I was back at two — and nobody was ever going to tell me."
 emailHook:   "Five months in, I should have been at step three. I was back at two."
 previewText: "Five months in, I should have been at step three. I was back at two."

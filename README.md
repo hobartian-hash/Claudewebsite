@@ -49,7 +49,6 @@ slug:        "the-thing-i-noticed"
 number:      5
 topic:       "coaching"
 date:        2026-09-06
-readTime:    5
 hook:        "The one-line version, as it appears on the website."
 emailHook:   "The shorter one-line version, for the top of the email."
 previewText: "The grey line that shows next to your subject line in the inbox."
@@ -65,10 +64,10 @@ What each line does:
 | `number` | The issue number. Shows as "Issue No. 005". |
 | `topic` | One of five, exactly: `work`, `coaching`, `career`, `fathering`, `offclock` |
 | `date` | Year-month-day. The newest date becomes the lead story on the home page. |
-| `readTime` | Minutes, as a whole number. |
 | `hook` | The one-liner on the website. Can run a bit long. |
 | `emailHook` | The trimmed version for the email. Leave it out and it uses `hook`. |
 | `previewText` | The inbox preview line. **Write this one properly** — it does more for whether people open the email than anything else. Leave it out and it uses `emailHook`. |
+| `readTime` | Optional. Leave it out and it's worked out from the word count. Add it to set your own number instead. |
 
 Below that, write the essay. Plain writing, a blank line between paragraphs.
 
@@ -245,7 +244,7 @@ The build tells you what's wrong in a whole sentence, and names the file. For
 example:
 
 ```
-content/essays/005-the-thing.md: front matter is missing "readTime".
+content/essays/005-the-thing.md: front matter is missing "previewText".
 content/essays/005-the-thing.md: topic "leadership" isn't one of work, coaching, career, fathering, offclock.
 content/essays/005-the-thing.md: a {% figure %} needs exactly four lines, one per cell — found 3.
 ```

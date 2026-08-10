@@ -4,7 +4,6 @@ slug:        "letterbox-not-lounge-room"
 number:      4
 topic:       "offclock"
 date:        2026-08-30
-readTime:    5
 hook:        "I spent two months teaching people how to run their inbox, while quietly not running mine."
 emailHook:   "I spent two months teaching people how to run their inbox, while quietly not running mine."
 previewText: "I spent two months teaching people how to run their inbox, while quietly not running mine."

@@ -4,7 +4,6 @@ slug:        "things-you-pass-on-without-meaning-to"
 number:      2
 topic:       "fathering"
 date:        2026-08-16
-readTime:    6
 hook:        "Imprint is what you pass on anyway. A blessing is what you pass on on purpose."
 emailHook:   "Imprint is what you pass on anyway. A blessing is what you pass on on purpose."
 previewText: "Imprint is what you pass on anyway. A blessing is what you pass on on purpose."
