@@ -24,8 +24,7 @@ layout: layouts/base.njk
       <div class="measure prose">
         {{ essay.body | safe }}
         <p class="signoff">{{ site.signoff }} {{ site.author }}</p>
-        <p class="follow">If this was useful, forward it on, or <a href="{{ site.baseUrl }}{{ page.url }}" class="copylink" data-url="{{ site.baseUrl }}{{ page.url }}" data-label="copy the link">copy the link</a>. Shorter thoughts during the week:
-          {% for s in site.socials %}<a href="{{ s.url }}">{{ s.label }}</a>{% if not loop.last %} and {% endif %}{% endfor %}.</p>
+        <p class="follow">If this was useful, forward it on, or <a href="{{ site.baseUrl }}{{ page.url }}" class="copylink" data-url="{{ site.baseUrl }}{{ page.url }}" data-label="copy the link">copy the link</a>.</p>
       </div>
     </div>
 
