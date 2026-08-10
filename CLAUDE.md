@@ -47,7 +47,10 @@ mistake, ask before changing it.
 | Panel fill (email quote / sponsor) | `#E7E3DB` |
 
 **Type** — DM Serif Display for titles, Newsreader for essay body at 19px/1.75,
-Plus Jakarta Sans for interface. Reading column capped at 36rem.
+Plus Jakarta Sans for interface. Reading column capped at 36rem. All three are
+self-hosted (latin-subset woff2 in `src/static/fonts/`, served from `/fonts/`)
+on the website — no third-party font request. The email still loads Newsreader
+from Google Fonts, since email clients can't reach locally-hosted files.
 
 **No images.** This is a deliberate constraint, not an oversight. The only photo
 anywhere is Tim's face, now set (`site.photo` → `/tim.jpg`), with a
@@ -205,6 +208,7 @@ src/
   js/progress.js         reading progress bar, essay pages only
   js/subscribe.js        subscribe form: validation, and keeping the reader on the page
   static/                copied to the site root — where a photo would go
+    fonts/                self-hosted woff2 files, served from `/fonts/`
   *.njk                  one file per URL, mostly empty; front matter only
 .eleventy.js
 netlify.toml
