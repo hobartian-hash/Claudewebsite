@@ -246,7 +246,7 @@ never parsed** — order comes from `date`, numbering from `number`, the URL fro
 | `readTime` | yes | number | authored by hand |
 | `hook` | yes | string | the site one-liner |
 | `emailHook` | no | string | falls back to `hook` |
-| `previewText` | no | string | falls back to `emailHook`, then `hook` |
+| `previewText` | yes | string | authored by hand, no fallback — enforced |
 
 Body is markdown, plus two custom block tags parsed by `lib/blocks.js`:
 
@@ -321,38 +321,31 @@ Listed, not fixed.
    `netlify.app` URL anywhere outside that config." A domain swap would need this
    line changed by hand.
 
-2. **`previewText` is optional and falls back silently.** `lib/essays.js` does
-   `previewText: data.previewText || data.emailHook || data.hook`, and
-   `previewText` is not in the required list. Contradicts "always authored by
-   hand … Never auto-generate it." All four essays do set it, but in 002, 003 and
-   004 it is byte-identical to `hook`, so the intent isn't being met in the
-   content either.
-
-3. **Topics are extensible by config.** `src/archive-topic.njk` paginates over
+2. **Topics are extensible by config.** `src/archive-topic.njk` paginates over
    `site.topics`, so adding a sixth key to `content/site.json` silently produces a
    sixth archive page and makes that topic valid in front matter. "Do not make
    them extensible" is documented but not enforced.
 
-4. **The drop cap is not essay-only.** `.prose > p:first-of-type::first-letter`
+3. **The drop cap is not essay-only.** `.prose > p:first-of-type::first-letter`
    matches any `.prose` container, and the About page uses one — so About opens
    with a drop cap too. The decisions describe it as "opening each essay". This
    matches the signed-off mockup, so it may well be deliberate.
 
 Softer observations, not contradictions:
 
-5. **All four essays are dated in the future** — 9, 16, 23 and 30 August 2026.
+4. **All four essays are dated in the future** — 9, 16, 23 and 30 August 2026.
    Every "newest" behaviour reads the latest date, so the dateline and lead panel
    currently advertise an edition dated after today, while all four are already
    readable. Nothing records whether these dates are a real schedule or sample
    data carried over from the mockup.
 
-6. **The tested v2 email template is not committed.** The email rules were
+5. **The tested v2 email template is not committed.** The email rules were
    derived from it and it is the stated reference for checking the renderer, but
    there is no copy in the repo to diff against.
 
-7. **`markdownTemplateEngine: "njk"` in `.eleventy.js` is inert**, because `.md`
+6. **`markdownTemplateEngine: "njk"` in `.eleventy.js` is inert**, because `.md`
    is not in `templateFormats`. Harmless, but misleading to read as live config.
 
-8. Both open questions are still open in the code: `readTime` is authored by hand
+7. Both open questions are still open in the code: `readTime` is authored by hand
    and required; the `list` block type is fully implemented on both sides and used
    by no essay.
