@@ -38,6 +38,19 @@
 
 <link rel="canonical" href="{{ site.baseUrl }}{{ page.url }}">
 
+<meta property="og:site_name" content="{{ site.wordmark }}">
+<meta property="og:title" content="{{ pageTitle }}">
+<meta property="og:description" content="{{ pageDescription if pageDescription else site.description }}">
+<meta property="og:url" content="{{ site.baseUrl }}{{ page.url }}">
+<meta property="og:type" content="{{ 'article' if pageKind == 'essay' else 'website' }}">
+{% if site.photo %}
+<meta property="og:image" content="{{ site.baseUrl }}{{ site.photo }}">
+<meta property="og:image:width" content="400">
+<meta property="og:image:height" content="400">
+<meta property="og:image:alt" content="{{ site.author }}">
+<meta name="twitter:card" content="summary">
+{% endif %}
+
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
