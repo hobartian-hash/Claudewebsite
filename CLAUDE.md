@@ -134,7 +134,6 @@ General → Branding, currently `#26241F`. Don't fight it in the template.
 ## Open questions — do not decide these unilaterally
 
 - Whether the `list` block type is kept or dropped. No essay uses one yet.
-- Whether `readTime` should be calculated rather than authored by hand.
 
 ---
 
@@ -243,7 +242,7 @@ never parsed** — order comes from `date`, numbering from `number`, the URL fro
 | `number` | yes | number | displayed zero-padded to three digits |
 | `topic` | yes | string | must be a key of `site.topics` — enforced |
 | `date` | yes | `YYYY-MM-DD` | drives all ordering: lead panel, dateline, archive, "newest" |
-| `readTime` | yes | number | authored by hand |
+| `readTime` | no | number | calculated at 160 wpm from the body, hand-override wins |
 | `hook` | yes | string | the site one-liner |
 | `emailHook` | no | string | falls back to `hook` |
 | `previewText` | yes | string | authored by hand, no fallback — enforced |
@@ -346,6 +345,5 @@ Softer observations, not contradictions:
 6. **`markdownTemplateEngine: "njk"` in `.eleventy.js` is inert**, because `.md`
    is not in `templateFormats`. Harmless, but misleading to read as live config.
 
-7. Both open questions are still open in the code: `readTime` is authored by hand
-   and required; the `list` block type is fully implemented on both sides and used
-   by no essay.
+7. The open question is still open in the code: the `list` block type is fully
+   implemented on both sides and used by no essay.

@@ -4,7 +4,6 @@ slug:        "the-fear-that-failed-backwards"
 number:      3
 topic:       "coaching"
 date:        2026-08-23
-readTime:    6
 hook:        "His silence was meant to protect the relationship. It was producing the exact harm he was trying to avoid."
 emailHook:   "His silence was meant to protect the relationship. It was producing the exact harm he was trying to avoid."
 previewText: "His silence was meant to protect the relationship. It was producing the exact harm he was trying to avoid."
