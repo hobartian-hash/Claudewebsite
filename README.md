@@ -230,6 +230,16 @@ Put the image file in `src/static/` — say `tim.jpg` — and set:
 Leave it empty and you get the lettered circle, which is what the design was
 built for. It is not a placeholder.
 
+**Supply it square.** The photo is shown in a circle in all five places it
+appears, so a square file is cropped to a round one. Anything taller or wider
+than square gets its edges cut off — a portrait-shaped file loses the top of
+the head. 400×400 is the right size; larger is wasted, since the biggest circle
+on the site is 88 pixels across.
+
+If you replace the photo, the favicon and app icons in `src/static/`
+(`favicon.ico`, `icon-192.png`, `icon-512.png`, `apple-touch-icon.png`) are cut
+from the same portrait and go stale — they need recutting to match.
+
 ### Other things in that file
 
 `readerCount` ("Read by 400+ consultants") shows on the home page once you set
@@ -292,8 +302,16 @@ roughly the same grey as the light cells and the highlight vanishes. Brass is a
 mid-tone and survives. The website controls its own colours, so it keeps the
 dark fill.
 
-**There are no photographs anywhere.** That's the design, not an unfinished
-job. The only image the site will ever want is your face.
+**The only photograph anywhere is your face.** Everything else is type, rules
+and dark panels — that's the design, not an unfinished job. Your portrait is a
+duotone stipple, navy ink on cream paper, so it reads as ink on the page rather
+than as the one colour photo on a site that has none.
+
+**The email has no photograph in it, on purpose.** Mail apps in dark mode
+invert background colours but leave images alone, so a cream-paper portrait
+would sit in the inbox as a bright rectangle floating in the dark. A
+transparent version fails the other way — navy ink disappears into a dark
+background. The email stays type-only.
 
 **The archive's topic buttons are real links to real pages.** They work with
 JavaScript switched off, and search engines can read them.

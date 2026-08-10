@@ -355,6 +355,19 @@ figure.gridfig figcaption{font-size:.8125rem;color:var(--soft);margin-top:.9rem;
 .aboutlead .face{width:4.5rem;height:4.5rem;border-radius:50%;background:var(--accent);color:#fff;
   display:grid;place-items:center;font-family:var(--display);font-size:1.9rem;flex:0 0 auto;object-fit:cover}
 
+/* ---------- the photo circle's edge ----------
+   The portrait is ink on cream paper, so on a cream page a photo circle has no
+   edge of its own and floats. A hairline gives it one. box-shadow, not border,
+   so nothing about the circles' size or position changes.
+
+   Photo only (img.*). The lettered-circle fallback is a solid slate fill and
+   already reads as a disc — it is left exactly as it was signed off. */
+img.avatar,
+.hero img.face,
+.aboutstrip img.face,
+.aboutlead img.face{box-shadow:0 0 0 1px var(--line)}
+.hero img.face{box-shadow:0 0 0 1px var(--line), 0 0 0 6px var(--card)}
+
 /* ---------- footer ---------- */
 /* ADAPTED: margin-top was 1rem. Flex layout stops margins collapsing, and in
    the mockup that 1rem was always swallowed by the larger bottom margin of the
