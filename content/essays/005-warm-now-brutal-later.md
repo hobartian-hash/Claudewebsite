@@ -10,7 +10,7 @@ emailHook:   "Every conversation I softened felt like kindness. The bill didn't 
 previewText: "The thing I got wrong wasn't the hiring decision. It was the two and a half years before it."
 ---
 
-"You just wanted that other person the whole time, didn't you?"
+“You just wanted that other person the whole time, didn't you?”
 
 That's the last thing Greg ever said to me that mattered. He was right, which is the part that took me the better part of a decade to admit.
 
@@ -106,7 +106,7 @@ It's that he was right.
 
 I did want the other person. I'd seen what they brought and I knew, well before the panel ever sat down. He read the situation correctly. The only thing he had wrong was the timing, and the timing was my doing, because I'd let him keep believing something I'd quietly stopped believing myself.
 
-That's the sentence I've had to sit with. Not "he was unrealistic." *I let him keep believing it.*
+That's the sentence I've had to sit with. Not “he was unrealistic.” *I let him keep believing it.*
 
 ## What I'd do now
 
@@ -132,7 +132,7 @@ I don't think it's pride, mostly. Pride is the flattering explanation, the one t
 
 I think it's simpler and smaller than that. Asking makes the thing real.
 
-The moment you say out loud, "I need help having a hard conversation with Greg," you've admitted there's a hard conversation to be had. It exists now. Someone else knows it exists. And now you have to have it. Right up until you ask, you get to keep the possibility that it might sort itself out, that he'll improve, that someone else will handle it, that the situation will change and the conversation will never be needed.
+The moment you say out loud, “I need help having a hard conversation with Greg,” you've admitted there's a hard conversation to be had. It exists now. Someone else knows it exists. And now you have to have it. Right up until you ask, you get to keep the possibility that it might sort itself out, that he'll improve, that someone else will handle it, that the situation will change and the conversation will never be needed.
 
 It never sorts itself out. But not asking lets you keep believing it might, and that belief is worth a lot in the short term.
 

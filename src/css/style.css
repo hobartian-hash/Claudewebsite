@@ -225,6 +225,13 @@ a{color:inherit;text-decoration:none}
   float:left;font-family:var(--display);font-size:3.6em;line-height:.82;
   padding:.06em .1em 0 0;color:var(--accent);
 }
+/* Opening on dialogue: the drop cap has to swallow the quotation mark, so hang
+   it out in the margin and the capital lines up with the column again. The
+   class is added by lib/render-web.js, only when the essay opens that way. */
+.prose > p.dropquote::first-letter{margin-left:-.42em}
+/* On a phone the full hang puts the mark within a few pixels of the screen
+   edge, so it comes back in and settles for most of the alignment. */
+@media (max-width:40rem){.prose > p.dropquote::first-letter{margin-left:-.2em}}
 .prose h2{color:var(--ink);font-family:var(--display);font-weight:400;font-size:1.7rem;line-height:1.2;margin:2.75rem 0 1rem}
 .prose ul{margin:0 0 1.5rem;padding-left:1.15rem}
 .prose li{margin-bottom:.7rem;padding-left:.3rem}
