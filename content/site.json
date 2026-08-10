@@ -36,19 +36,20 @@
 
   "_topicNotes": "The one-line descriptions on the About page. Taken from the notes beside each topic in the mockup.",
   "topicNotes": {
-    "work": "clients, projects, the craft of consulting.",
-    "coaching": "building the person beside you.",
-    "career": "the shape of a working life.",
+    "work": "clients, projects, and the risks that were never really about the software.",
+    "coaching": "building the person beside you, and the conversations that get avoided.",
+    "career": "strengths, blind spots, and the decisions you only understand years later.",
     "fathering": "what gets handed on, deliberately or not.",
-    "offclock": "energy, attention, the life around the work."
+    "offclock": "attention, energy, the life around the work."
   },
 
-  "about": "I'm a consultant and a father, based in Hobart. My weeks are spent inside other people's problems — reading the room, running the project, trying to leave things better than I found them. Every Sunday I write one short essay about what that's actually like, at work and at home.",
+  "about": "I'm a consultant, a coach and a father, based in Hobart. My weeks are spent inside other people's problems — reading the room, running the project, trying to leave things better than I found them. Every Sunday I write one short essay about what that's actually like, at work and at home.",
 
   "aboutMore": [
-    "Most of what I write comes out of something that happened that week. A moment in a meeting I couldn't stop thinking about, a habit I caught myself in, a thing I got wrong and only noticed later.",
+    "The consulting is projects — the kind of system change that touches every person in an organisation, where the real risk is never the software. The coaching is leadership teams and the people in them: the conversation nobody's having, and what it's costing them. And for over a decade I've been teaching people how to run their inbox and protect the work that actually matters.",
+    "Most of what I write comes out of something that happened that week. A moment in a meeting I couldn't stop thinking about, a habit I caught myself in, a thing I got wrong and only noticed later. I'm usually somewhere in the story, and not often as the person who had it sorted. Teaching something for years doesn't stop you drifting. It mostly just makes it easier to notice.",
     "The thread running through all of it is the difference between what happens by default and what only happens because someone decided it would. Drift is free. Everything worth having has to be chosen out loud.",
-    "Some weeks that's a project, a client, or the person you're meant to be handing the work to. Other weeks it's my kids. I've stopped trying to keep those separate, because the same thing is going on in both."
+    "Some weeks that's a project, a client, or the person you're meant to be handing the work to. Other weeks it's my two daughters, and what I've handed on to them without ever deciding to. I've stopped trying to keep those separate, because the same thing is going on in both."
   ],
 
   "signoff": "Cheers,",
