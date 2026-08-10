@@ -1,0 +1,25 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>{{ site.wordmark }}</title>
+<subtitle>{{ site.description }}</subtitle>
+<link href="{{ site.baseUrl }}/" />
+<link href="{{ site.baseUrl }}/feed.xml" rel="self" />
+<id>{{ site.baseUrl }}/</id>
+<updated>{{ essays[0].date }}T00:00:00Z</updated>
+<author><name>{{ site.author }}</name></author>
+{% for essay in essays -%}
+<entry>
+<title>{{ essay.title }}</title>
+<link href="{{ site.baseUrl }}/essays/{{ essay.slug }}/" />
+<id>{{ site.baseUrl }}/essays/{{ essay.slug }}/</id>
+<published>{{ essay.date }}T00:00:00Z</published>
+<updated>{{ essay.date }}T00:00:00Z</updated>
+<summary>{{ essay.hook }}</summary>
+<content type="html">{{ essay.body | e }}</content>
+</entry>
+{% endfor -%}
+</feed>

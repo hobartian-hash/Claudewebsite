@@ -135,7 +135,6 @@ General → Branding, currently `#26241F`. Don't fight it in the template.
 
 - Whether the `list` block type is kept or dropped. No essay uses one yet.
 - Whether `readTime` should be calculated rather than authored by hand.
-- Whether the site needs an RSS feed.
 
 ---
 
@@ -227,6 +226,7 @@ and rebuilt from scratch.
 | `/welcome/` | `src/welcome.njk` | post-confirmation landing; permanently `noindex` |
 | `/404.html` | `src/404.njk` | Netlify serves it for unknown URLs |
 | `/_headers` | `src/headers.njk` | generated Netlify headers file |
+| `/feed.xml` | `src/feed.njk` | hand-written Atom feed over the essays data |
 
 14 HTML pages at present.
 
