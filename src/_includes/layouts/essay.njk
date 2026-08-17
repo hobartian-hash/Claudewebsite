@@ -8,6 +8,12 @@ layout: layouts/base.njk
     <div class="wrap">
       <div class="measure essayhead">
         <h1>{{ essay.title }}</h1>
+        {#- The deck (standfirst). Same one-liner as the home lead and the
+            archive row — `hook` — which until now was the one place an essay
+            didn't show it. It sits outside .prose deliberately: the drop cap
+            keys off .prose > p:first-of-type, and a deck inside the column
+            would steal it. -#}
+        <p class="deck">{{ essay.hook }}</p>
         <div class="byline">
           <span>By {{ site.author }}</span><i>&middot;</i>
           <span>{{ essay.date | fmtDate }}</span><i>&middot;</i>
