@@ -16,6 +16,13 @@ If any line still says PENDING, stop and tell Tim the plan is waiting on him.
 The task specs below assume the recommended answers (D1a, D2a, D3a); if Tim
 picks a (b) option, the affected task notes the variation.
 
+**Task 4 is additionally gated on `NAMING-REVIEW.md` (decisions N1–N4).** That
+review recommends changes to the wordmark, strapline, author name and the
+three site descriptions. Since Task 4 rewrites the subscribe copy in the same
+config file, doing it before the naming call is settled means writing those
+strings twice — and possibly around a wordmark that is about to change. If
+N1–N4 are unanswered, run Tasks 1, 2, 3 and 5 and leave Task 4 until they are.
+
 ## Executing model
 
 **Haiku 4.5 (`claude-haiku-4-5-20251001`) for every task.** The judgment calls
