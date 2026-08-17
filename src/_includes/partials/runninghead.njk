@@ -1,0 +1,20 @@
+{# The running head. On an essay page the masthead scrolls away like the
+   nameplate on page one, and this takes over: what you're reading, which
+   issue it is, and how far through you are.
+
+   aria-hidden, because every word in it is already announced elsewhere on
+   the page — it is a visual convenience, not content. Nothing inside is
+   focusable, for the same reason.
+
+   The progress bar lives here now rather than loose at the top of the
+   window, so the brass line reads as the underside of the running head.
+   src/js/progress.js fills in the page count and shows the bar. #}
+<div class="runhead" id="runhead" data-mins="{{ essay.readTime }}" aria-hidden="true">
+  <div class="wrap">
+    <span class="rh-brand">{{ site.wordmark }}</span>
+    <span class="rh-no">No.&nbsp;{{ essay.number | pad }}</span>
+    <span class="rh-title">{{ essay.title }}</span>
+    <span class="rh-page" id="rh-page"></span>
+  </div>
+  <div id="progress"></div>
+</div>

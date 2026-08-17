@@ -61,8 +61,8 @@
 <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
-{% if pageKind == 'essay' %}<div id="progress"></div>{% endif %}
+<body{% if pageKind == 'essay' %} class="essaypage"{% endif %}>
+{% if pageKind == 'essay' %}{% include "partials/runninghead.njk" %}{% endif %}
 
 {% include "partials/masthead.njk" %}
 
