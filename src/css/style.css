@@ -363,6 +363,24 @@ figure.gridfig figcaption{font-size:.8125rem;color:var(--soft);margin-top:.9rem;
   font-style:italic;color:var(--soft)}
 .follow{border-top:1px solid var(--line);margin-top:2.5rem;padding-top:1.5rem;color:var(--soft);font-size:.9375rem}
 .follow a{color:var(--accent);font-weight:600}
+/* Issue navigation — the issue either side of this one, by date. Two cells
+   divided by a hairline, the next issue right-aligned against it, so the
+   pair reads as the foot of a page rather than as two buttons. */
+.issuenav{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;
+  margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line)}
+.issuenav a{display:block}
+.issuenav .next{text-align:right;grid-column:2}
+.issuenav .lbl{display:block;font:600 .75rem var(--ui);color:var(--accent)}
+.issuenav .no{display:block;font:600 .6875rem var(--ui);letter-spacing:.14em;
+  text-transform:uppercase;color:var(--warm);margin-top:.55rem}
+.issuenav .t{display:block;font-family:var(--display);font-size:1.15rem;
+  line-height:1.25;margin-top:.2rem}
+.issuenav a:hover .t{color:var(--accent)}
+@media (max-width:40rem){
+  .issuenav{grid-template-columns:1fr;gap:1.5rem}
+  .issuenav .next{text-align:left;grid-column:1}
+}
+
 .backlink{display:inline-block;margin-top:2rem;font-size:.875rem;font-weight:600;color:var(--accent)}
 .backlink:hover{text-decoration:underline}
 

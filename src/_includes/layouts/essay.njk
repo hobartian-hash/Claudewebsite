@@ -31,6 +31,29 @@ layout: layouts/base.njk
         <p class="signoff">{{ site.signoff }} {{ site.author }}</p>
         <p class="follow">If this was useful, forward it on, or <a href="{{ site.baseUrl }}{{ page.url }}" class="copylink" data-url="{{ site.baseUrl }}{{ page.url }}" data-label="copy the link">copy the link</a>.</p>
       </div>
+
+      {#- Issue navigation. A paper runs in order, so the foot of an essay
+          moves to the issue either side of this one by date, before the
+          "read next" suggestions offer anything by subject. -#}
+      {%- set nav = essays | issueNav(essay) %}
+      {%- if nav.prev or nav.next %}
+      <nav class="issuenav measure" aria-label="Issues">
+        {%- if nav.prev %}
+        <a class="prev" href="/essays/{{ nav.prev.slug }}/">
+          <span class="lbl">&larr; Previous issue</span>
+          <span class="no">No.&nbsp;{{ nav.prev.number | pad }}</span>
+          <span class="t">{{ nav.prev.title }}</span>
+        </a>
+        {%- else %}<span></span>{% endif %}
+        {%- if nav.next %}
+        <a class="next" href="/essays/{{ nav.next.slug }}/">
+          <span class="lbl">Next issue &rarr;</span>
+          <span class="no">No.&nbsp;{{ nav.next.number | pad }}</span>
+          <span class="t">{{ nav.next.title }}</span>
+        </a>
+        {%- endif %}
+      </nav>
+      {%- endif %}
     </div>
 
     <div class="wrap">

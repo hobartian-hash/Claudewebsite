@@ -53,6 +53,16 @@ module.exports = function (eleventyConfig) {
       .slice(0, 3)
   );
 
+  /* The issue either side of this one, for the foot of an essay. `essays` is
+     newest first, so the previous issue — the older, lower-numbered one — is
+     the next item along, and the next issue is the one before it. Either can
+     be missing: the newest essay has no next, the first has no previous. */
+  eleventyConfig.addFilter("issueNav", (essays, current) => {
+    const i = essays.findIndex((e) => e.slug === current.slug);
+    if (i === -1) return {};
+    return { prev: essays[i + 1], next: essays[i - 1] };
+  });
+
   // Kept for future reinstatement of topic filtering in the UI.
   eleventyConfig.addFilter("byTopic", (essays, topic) =>
     topic ? essays.filter((e) => e.topic === topic) : essays
