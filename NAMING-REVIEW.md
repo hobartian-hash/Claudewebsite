@@ -210,7 +210,25 @@ an archive of emails with the old masthead.
 Whatever Tim decides, he should decide it **before** the domain is bought.
 That is the fork in the road, and it is a month away.
 
-## 10. Decisions — Tim's alone
+## 10. Decisions — answered by Tim, 17 August 2026
+
+**N1 — Chosen Out Loud** (option A). **N2 — yes, Tim Hynes everywhere.**
+**N3 — "Tim Hynes · one essay, Sunday mornings."** **N4 — all three drafts
+approved as written.** **N5 — (c): topics dropped for now**, archive goes
+chronological, to be revisited when there is more to categorise.
+
+Recorded here for the archive; the executable form lives in the decisions
+table at the top of `REDESIGN-PLAN.md` (Tasks 4, 5 and 6).
+
+One consequence worth noting, because it is a happy one: with the name coming
+from *"everything worth having has to be chosen out loud"*, the hero motto
+stops being a restatement of the wordmark and starts being its explanation.
+The old second half — "everything else you do on purpose" — is replaced by the
+sentence the name was taken from, so the masthead now justifies itself.
+
+The original wording of the decisions follows.
+
+### As originally put
 
 - **N1 — The name.** Keep "On Purpose" (§8E), or change it (§8A–D)? If
   changing, check the final candidate for collisions and domain availability
