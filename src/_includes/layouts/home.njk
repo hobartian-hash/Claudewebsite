@@ -4,7 +4,7 @@ layout: layouts/base.njk
 {%- from "partials/face.njk" import face -%}
 {%- from "partials/subform.njk" import subform -%}
 {%- from "partials/cta.njk" import cta -%}
-{%- from "partials/card.njk" import card -%}
+{%- from "partials/row.njk" import row -%}
 {%- from "partials/lead.njk" import lead -%}
 {%- set newest = essays[0] -%}
 
@@ -22,9 +22,9 @@ layout: layouts/base.njk
     {{ lead(newest, site) }}
 
     <div class="secline"><h2>More essays</h2><a href="/archive/">Full archive &rarr;</a></div>
-    <section class="grid">
-      {%- for e in essays.slice(1, 4) %}
-      {{ card(e, site) }}
+    <section class="index">
+      {%- for e in essays.slice(1, 5) %}
+      {{ row(e, site) }}
       {%- endfor %}
     </section>
 

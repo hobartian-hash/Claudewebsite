@@ -1,0 +1,11 @@
+{# One line of the essay index. Replaces the old card grid. #}
+{% macro row(e, site) -%}
+<a class="idxrow" href="/essays/{{ e.slug }}/">
+  <span class="no">No. {{ e.number | pad }}</span>
+  <span class="t">
+    <span class="h">{{ e.title }}</span>
+    <span class="d">{{ e.hook }}</span>
+  </span>
+  <span class="meta">{{ e.date | fmtShort }} &middot; {{ e.readTime }} min</span>
+</a>
+{%- endmacro %}
