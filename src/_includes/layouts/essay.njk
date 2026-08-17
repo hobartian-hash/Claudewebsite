@@ -8,6 +8,12 @@ layout: layouts/base.njk
     <div class="wrap">
       <div class="measure essayhead">
         <h1>{{ essay.title }}</h1>
+        {#- The deck (standfirst). Same one-liner as the home lead and the
+            archive row — `hook` — which until now was the one place an essay
+            didn't show it. It sits outside .prose deliberately: the drop cap
+            keys off .prose > p:first-of-type, and a deck inside the column
+            would steal it. -#}
+        <p class="deck">{{ essay.hook }}</p>
         <div class="byline">
           <span>By {{ site.author }}</span><i>&middot;</i>
           <span>{{ essay.date | fmtDate }}</span><i>&middot;</i>
@@ -25,6 +31,33 @@ layout: layouts/base.njk
         <p class="signoff">{{ site.signoff }} {{ site.author }}</p>
         <p class="follow">If this was useful, forward it on, or <a href="{{ site.baseUrl }}{{ page.url }}" class="copylink" data-url="{{ site.baseUrl }}{{ page.url }}" data-label="copy the link">copy the link</a>.</p>
       </div>
+
+      {#- Printed pages travel without their address. Hidden on screen;
+          the print stylesheet is the only thing that shows it. -#}
+      <p class="printfoot measure">{{ site.wordmark }} &middot; Issue No.&nbsp;{{ essay.number | pad }} &middot; {{ essay.date | fmtDate }} &middot; {{ site.baseUrl }}{{ page.url }}</p>
+
+      {#- Issue navigation. A paper runs in order, so the foot of an essay
+          moves to the issue either side of this one by date, before the
+          "read next" suggestions offer anything by subject. -#}
+      {%- set nav = essays | issueNav(essay) %}
+      {%- if nav.prev or nav.next %}
+      <nav class="issuenav measure" aria-label="Issues">
+        {%- if nav.prev %}
+        <a class="prev" href="/essays/{{ nav.prev.slug }}/">
+          <span class="lbl">&larr; Previous issue</span>
+          <span class="no">No.&nbsp;{{ nav.prev.number | pad }}</span>
+          <span class="t">{{ nav.prev.title }}</span>
+        </a>
+        {%- else %}<span></span>{% endif %}
+        {%- if nav.next %}
+        <a class="next" href="/essays/{{ nav.next.slug }}/">
+          <span class="lbl">Next issue &rarr;</span>
+          <span class="no">No.&nbsp;{{ nav.next.number | pad }}</span>
+          <span class="t">{{ nav.next.title }}</span>
+        </a>
+        {%- endif %}
+      </nav>
+      {%- endif %}
     </div>
 
     <div class="wrap">

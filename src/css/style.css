@@ -168,7 +168,39 @@ a{color:inherit;text-decoration:none}
   .dateline span:nth-child(3){display:none}
 }
 
-#progress{position:fixed;top:0;left:0;height:2px;background:var(--warm);width:0;z-index:50;transition:width .1s linear}
+/* ---------- running head (essay pages only) ----------
+   The nameplate belongs at the top of page one, not above every column of
+   type, so on an essay the masthead scrolls away and this slides in behind
+   it. Everywhere else the masthead stays sticky exactly as before. */
+body.essaypage .masthead{position:static}
+
+.runhead{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  /* Near-opaque, unlike the masthead's 90%. The masthead only ever has the
+     top of a page behind it; this one has body text under it the whole way
+     down, and at 90% the type ghosted through and read as a smudge. */
+  background:var(--bg);background:color-mix(in srgb,var(--bg) 97%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+  transform:translateY(-101%);transition:transform .22s ease;
+}
+.runhead.on{transform:none}
+.runhead .wrap{display:flex;align-items:baseline;gap:.9rem;padding-block:.5rem;background:transparent}
+.runhead .rh-brand,.runhead .rh-no,.runhead .rh-page{
+  font:600 .6875rem var(--ui);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--soft);white-space:nowrap;
+}
+.runhead .rh-no{color:var(--warm)}
+.runhead .rh-title{
+  font-family:var(--prose);font-style:italic;font-size:.9375rem;color:var(--ink);
+  flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.runhead .rh-page{margin-left:auto}
+@media (max-width:40rem){.runhead .rh-brand{display:none}}
+@media (prefers-reduced-motion:reduce){.runhead{transition:none}}
+
+/* The brass line now sits on the underside of the running head rather than
+   loose against the top of the window. Still filled by src/js/progress.js. */
+#progress{position:absolute;left:0;bottom:-1px;height:2px;background:var(--warm);width:0;transition:width .1s linear}
 
 
 /* ---------- subscribe ---------- */
@@ -254,6 +286,11 @@ a{color:inherit;text-decoration:none}
 .essayhead{padding:clamp(2.5rem,6vw,3.5rem) 0 0;text-align:center;background:var(--bg);color:var(--ink)}
 .essayhead h1{color:var(--ink);font-family:var(--display);font-weight:400;font-size:clamp(2.1rem,5vw,3.2rem);
   line-height:1.12;margin:1rem auto .9rem;max-width:20ch}
+/* The deck, a.k.a. standfirst. Set to match the front page lead, one step
+   larger, so a piece opens the same way whether you meet it on the home
+   page or on its own. */
+.deck{font-family:var(--prose);font-style:italic;font-size:clamp(1.2rem,2.8vw,1.5rem);
+  line-height:1.45;max-width:38ch;margin:0 auto 1.4rem}
 .byline{display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;justify-content:center;font-size:.8125rem;color:var(--soft)}
 .byline i{font-style:normal;color:var(--line)}
 .headrule{height:1px;background:var(--line);margin-top:2.25rem}
@@ -308,12 +345,42 @@ figure.gridfig .t{font-size:.6875rem;font-weight:700;letter-spacing:.14em;text-t
 .fourbox div.active b{border-color:var(--warm);color:var(--warm)}
 figure.gridfig figcaption{font-size:.8125rem;color:var(--soft);margin-top:.9rem;font-style:italic}
 
+/* End mark. The printer's square that closes a magazine feature, set in
+   brass and hung off the last paragraph of the body — the one immediately
+   before the sign-off — so it sits on the final line rather than on a line
+   of its own.
+
+   Scoped by :has(+ .signoff), which does two useful things for free. The
+   About page uses .prose but has no sign-off, so it never gets a mark. And
+   an essay ending on a quote or a figure has no paragraph in that position,
+   so it gets no mark either — the same rule the email follows when it
+   decides where the sign-off goes. */
+.prose > p:has(+ .signoff)::after{content:"\2009\25AA";color:var(--warm)}
+
 /* Sign-off: one line, italic, secondary grey. Deliberately quiet — the
    essays end on a question, and a large sign-off competes with it. */
 .signoff{margin-top:2.5rem;font-family:var(--prose);font-size:1.125rem;
   font-style:italic;color:var(--soft)}
 .follow{border-top:1px solid var(--line);margin-top:2.5rem;padding-top:1.5rem;color:var(--soft);font-size:.9375rem}
 .follow a{color:var(--accent);font-weight:600}
+/* Issue navigation — the issue either side of this one, by date. Two cells
+   divided by a hairline, the next issue right-aligned against it, so the
+   pair reads as the foot of a page rather than as two buttons. */
+.issuenav{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;
+  margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line)}
+.issuenav a{display:block}
+.issuenav .next{text-align:right;grid-column:2}
+.issuenav .lbl{display:block;font:600 .75rem var(--ui);color:var(--accent)}
+.issuenav .no{display:block;font:600 .6875rem var(--ui);letter-spacing:.14em;
+  text-transform:uppercase;color:var(--warm);margin-top:.55rem}
+.issuenav .t{display:block;font-family:var(--display);font-size:1.15rem;
+  line-height:1.25;margin-top:.2rem}
+.issuenav a:hover .t{color:var(--accent)}
+@media (max-width:40rem){
+  .issuenav{grid-template-columns:1fr;gap:1.5rem}
+  .issuenav .next{text-align:left;grid-column:1}
+}
+
 .backlink{display:inline-block;margin-top:2rem;font-size:.875rem;font-weight:600;color:var(--accent)}
 .backlink:hover{text-decoration:underline}
 
@@ -351,6 +418,9 @@ footer.foot a:hover{color:var(--accent)}
 @media (prefers-color-scheme:dark){
   html,body,main,article{background:var(--bg);color:var(--ink)}
   .masthead,.dateline{background:var(--bg);color:var(--soft)}
+  .runhead{background:var(--bg);border-bottom-color:var(--line)}
+  .runhead .rh-title{color:var(--ink)}
+  .runhead .rh-brand,.runhead .rh-page{color:var(--soft)}
   .aboutstrip{background:var(--card);color:var(--ink)}
   .subform input{background:#fff;color:var(--ink)}
 
@@ -374,6 +444,58 @@ footer.foot a:hover{color:var(--accent)}
   .cta{background:var(--ink);color:var(--card)}
   .cta h2{color:var(--card)}
   .cta p,.cta .fine{color:#CFC8BC}
+}
+
+/* =========================================================
+   PRINT
+   The one place two columns actually work, because paper has a fixed page
+   height and you never have to scroll back up. An essay printed from the
+   site comes out as a feature: two columns of Newsreader, the drop cap
+   intact, no navigation, and the issue number and address at the foot.
+
+   Screen layout is untouched — everything below is inside @media print.
+   ========================================================= */
+.printfoot{display:none}
+
+@media print{
+  @page{margin:18mm}
+
+  /* The paper tint is left alone rather than forced to white. Browsers
+     don't print background colours unless the reader asks for them, so by
+     default this comes out on white paper; if they do ask, they get the
+     warm paper the site is designed on. Either way the type is ink. */
+  html,body{font-size:10.5pt}
+  main{animation:none}
+
+  /* Anything that can't be followed on paper, or that isn't the essay. */
+  .masthead,.runhead,footer.foot,.cta,.secline,.index,.issuenav,
+  .backlink,.follow,.subform{display:none}
+
+  .wrap,.measure{max-width:none;margin:0;padding:0}
+
+  .essayhead{padding-top:0}
+  .essayhead h1{font-size:24pt;line-height:1.1;margin:0 auto .5rem;max-width:24ch}
+  .deck{font-size:12pt;max-width:44ch;margin-bottom:.8rem}
+  .byline{font-size:8.5pt}
+  .headrule{margin-top:1.2rem;background:#000}
+
+  /* The two columns. 18mm margins on A4 leave roughly a 45-character
+     measure per column, which is the newspaper figure. */
+  .prose{padding-top:1.2rem;font-size:10.5pt;line-height:1.55;
+    columns:2;column-gap:7mm}
+  .prose p{margin-bottom:.8rem}
+  .prose h2{font-size:13pt;margin:1.4rem 0 .5rem;break-after:avoid}
+  .prose blockquote,figure.gridfig,.prose table{break-inside:avoid;margin:1.2rem 0}
+  .prose blockquote{font-size:13pt;padding:.9rem 1rem}
+  .fourbox div{min-height:0;padding:.7rem .8rem;font-size:9pt}
+  .signoff{font-size:10.5pt;margin-top:1.2rem}
+
+  /* A printed link is a dead end unless it says where it went. */
+  .prose a[href^="http"]::after{content:" (" attr(href) ")";font-size:8.5pt;color:var(--soft)}
+
+  .printfoot{display:block;margin-top:1.5rem;padding-top:.6rem;
+    border-top:1px solid var(--line);text-align:center;
+    font:400 8pt var(--ui);color:var(--soft)}
 }
 
 main{animation:rise .35s ease both;background:var(--bg);color:var(--ink)}
