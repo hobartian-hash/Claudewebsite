@@ -5,7 +5,7 @@ layout: layouts/base.njk
     JavaScript turned off. The mockup filtered client-side; that was a
     prototype convenience, not the design. -#}
 {%- from "partials/cta.njk" import cta -%}
-{%- from "partials/card.njk" import card -%}
+{%- from "partials/row.njk" import row -%}
 {%- set list = essays | byTopic(topic) -%}
 
 <div class="wrap">
@@ -23,9 +23,9 @@ layout: layouts/base.njk
     </div>
 
     {%- if list.length %}
-    <section class="grid">
+    <section class="index">
       {%- for e in list %}
-      {{ card(e, site) }}
+      {{ row(e, site) }}
       {%- endfor %}
     </section>
     {%- else %}

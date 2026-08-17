@@ -10,7 +10,7 @@ layout: layouts/base.njk
     with one; this is the one page where the reader has just subscribed, and
     asking again would be daft. -#}
 {%- from "partials/face.njk" import face -%}
-{%- from "partials/card.njk" import card -%}
+{%- from "partials/row.njk" import row -%}
 
 <div class="wrap">
     <section class="pagehead">
@@ -29,9 +29,9 @@ layout: layouts/base.njk
     </section>
 
     <div class="secline"><h2>{{ site.welcome.readNext }}</h2><a href="/archive/">Full archive &rarr;</a></div>
-    <section class="grid">
+    <section class="index">
       {%- for e in essays.slice(0, 3) %}
-      {{ card(e, site) }}
+      {{ row(e, site) }}
       {%- endfor %}
     </section>
   </div>

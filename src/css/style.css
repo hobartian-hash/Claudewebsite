@@ -244,17 +244,22 @@ a{color:inherit;text-decoration:none}
 .lead .go{color:var(--warm);font-weight:600}
 .lead:hover .go{text-decoration:underline}
 
-/* ---------- essay cards ---------- */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(16rem,1fr));gap:1.25rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.5rem;
-  transition:border-color .18s;display:flex;flex-direction:column}
-.card:hover{border-color:var(--accent)}
-.card h3{font-family:var(--display);font-weight:400;font-size:1.3rem;line-height:1.2;margin:.75rem 0 .5rem}
-.card:hover h3{color:var(--accent)}
-.card p{color:var(--soft);font-size:.9375rem;margin:0 0 1.1rem}
-.card .metaline{margin-top:auto;font-size:.75rem;color:var(--soft);border-top:1px solid var(--line);
-  padding-top:.85rem;display:flex;justify-content:space-between}
-.card .metaline .go{color:var(--accent);font-weight:600}
+/* ---------- essay index — the paper's contents page ---------- */
+.index{border-top:1px solid var(--line)}
+.idxrow{
+  display:grid;grid-template-columns:5.5rem 1fr auto;gap:1.25rem;
+  align-items:baseline;padding:1.35rem 0;border-bottom:1px solid var(--line);
+  transition:color .15s;
+}
+.idxrow .no{font:600 .6875rem var(--ui);letter-spacing:.14em;color:var(--warm);text-transform:uppercase}
+.idxrow .h{display:block;font-family:var(--display);font-weight:400;font-size:1.35rem;line-height:1.2}
+.idxrow:hover .h{color:var(--accent)}
+.idxrow .d{display:block;color:var(--soft);font-size:.9375rem;margin-top:.35rem;max-width:52ch}
+.idxrow .meta{font-size:.75rem;color:var(--soft);white-space:nowrap}
+@media (max-width:40rem){
+  .idxrow{grid-template-columns:1fr;gap:.35rem}
+  .idxrow .meta{white-space:normal}
+}
 
 /* ---------- home about strip ---------- */
 .aboutstrip{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
@@ -381,14 +386,14 @@ footer.foot a:hover{color:var(--accent)}
 @media (prefers-color-scheme:dark){
   html,body,main,article{background:var(--bg);color:var(--ink)}
   .masthead,.dateline{background:var(--bg);color:var(--soft)}
-  .card,.hero,.aboutstrip{background:var(--card);color:var(--ink)}
+  .hero,.aboutstrip{background:var(--card);color:var(--ink)}
   .subform input{background:#fff;color:var(--ink)}
 
   /* essay page */
   .essayhead,.essayhead h1,.prose,.prose p,.prose h2,.prose li,.signoff,
   .pagehead,.pagehead h1,.secline h2{background:transparent;color:var(--ink)}
   .essayhead h1,.prose h2{color:var(--ink)}
-  .byline,.fine,.follow,.signoff,.pagehead p,.card p,.card .metaline{color:var(--soft)}
+  .byline,.fine,.follow,.signoff,.pagehead p{color:var(--soft)}
   .prose blockquote{background:var(--card);color:var(--ink);border-color:var(--line);border-left-color:var(--warm)}
   .prose table,.prose th,.prose td{border-color:var(--line)}
   .prose th{background:var(--bg);color:var(--soft)}
@@ -398,7 +403,7 @@ footer.foot a:hover{color:var(--accent)}
   .fourbox div.active{background:var(--ink);color:var(--card)}
   .fourbox div b{color:var(--soft)}
   .fourbox div.active b{color:var(--warm)}
-  .prose a,.secline a,.backlink,.follow a,.card .metaline .go{color:var(--accent)}
+  .prose a,.secline a,.backlink,.follow a{color:var(--accent)}
 
   /* panels that are meant to be dark stay dark */
   .lead{background:var(--ink);color:var(--card)}

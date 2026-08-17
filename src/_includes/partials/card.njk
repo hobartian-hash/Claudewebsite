@@ -1,9 +1,0 @@
-{# An essay card. Used on the home page, the archive, and "Read next". #}
-{% macro card(e, site) -%}
-<a class="card" href="/essays/{{ e.slug }}/">
-        <span class="pill">{{ e.topic | topicName(site.topics) }}</span>
-        <h3>{{ e.title }}</h3>
-        <p>{{ e.hook }}</p>
-        <span class="metaline"><span>Issue {{ e.number | pad }} &middot; {{ e.readTime }} min</span><span class="go">Read &rarr;</span></span>
-      </a>
-{%- endmacro %}

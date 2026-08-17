@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 ---
 {%- from "partials/cta.njk" import cta -%}
-{%- from "partials/card.njk" import card -%}
+{%- from "partials/row.njk" import row -%}
 
 <article>
     <div class="wrap">
@@ -30,9 +30,9 @@ layout: layouts/base.njk
 
     <div class="wrap">
       <div class="secline"><h2>Read next</h2><a href="/archive/">Full archive &rarr;</a></div>
-      <section class="grid">
+      <section class="index">
         {%- for e in essays | related(essay) %}
-        {{ card(e, site) }}
+        {{ row(e, site) }}
         {%- endfor %}
       </section>
       <p><a class="backlink" href="/archive/">&larr; Back to the archive</a></p>
