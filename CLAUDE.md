@@ -65,6 +65,12 @@ sanctioned use of the photo is the favicon set (`src/static/favicon.ico`,
 `icon-192.png`, `icon-512.png`, `apple-touch-icon.png`), derived from the same
 portrait — square crops, no circular masking, no recolouring.
 
+**Design finishes** — `--r:.4rem` (smaller radii, boxes less rounded); no
+hover-lift, no transforms on cards or leads; topic pills are small-caps labels;
+archive filters are text links. Cards became a ruled newspaper index — hairline
+rows with brass issue numbers — on the home, archive and essay "read next"
+sections.
+
 **The portrait is a duotone stipple** — navy ink on cream paper, in the
 engraved/hedcut register, chosen to read as ink on paper like everything else
 on the site. Two rules follow from it and were decided deliberately:
@@ -84,11 +90,16 @@ no geometry changes) scoped to `img` — the lettered fallback is a solid slate
 fill and keeps its original edgeless treatment.
 
 **Signature elements** — the weekend-edition dateline under the masthead; a drop
-cap opening each essay **on the website only**; the newest essay in a dark lead
-panel on the home page, chosen by date; the reusable 2×2 figure block.
+cap opening each essay **on the website only**; the newest essay leading as a
+light front page on the home page, chosen by date; the reusable 2×2 figure
+block; a hairline-ruled index with brass issue numbers.
 
-**Topics are fixed at five**: Work, Coaching, Career, Fathering, Off the Clock.
-Do not make them extensible.
+**Topics** — N5c decision: dropped from the UI, archive now chronological.
+Reintroduced reversibly: the `topic` field is retained in every essay's front
+matter, `site.topics` and `topicNotes` in config are untouched, and the
+`related` filter quietly orders "Read next" by same-topic-first. Template code
+assumes no topic (the archive page is singular, the essay page is topicless),
+so reinstating them later is a UI change only, with no content to restore.
 
 ---
 
@@ -227,7 +238,7 @@ src/
   _data/site.js          exposes site.json to templates as `site`
   _data/essays.js        exposes essays as `essays`, body pre-rendered to web HTML
   _includes/layouts/     base, home, archive, essay, about, welcome
-  _includes/partials/    masthead, dateline, card, lead, cta, subform, face, footer
+  _includes/partials/    masthead, dateline, row, lead, cta, subform, face, footer
   _includes/email/       head.njk, blocks.njk, foot.njk
   css/style.css          the design
   js/progress.js         reading progress bar, essay pages only
@@ -247,8 +258,7 @@ and rebuilt from scratch.
 | URL | Built by | Notes |
 |---|---|---|
 | `/` | `src/index.njk` | |
-| `/archive/` | `src/archive.njk` | |
-| `/archive/<topic>/` | `src/archive-topic.njk` | one real page per topic, paginated over `site.topics` |
+| `/archive/` | `src/archive.njk` | chronological, no topic filters |
 | `/essays/<slug>/` | `src/essays.njk` | paginated over the essays data file |
 | `/about/` | `src/about.njk` | |
 | `/welcome/` | `src/welcome.njk` | post-confirmation landing; permanently `noindex` |
@@ -256,7 +266,7 @@ and rebuilt from scratch.
 | `/_headers` | `src/headers.njk` | generated Netlify headers file |
 | `/feed.xml` | `src/feed.njk` | hand-written Atom feed over the essays data |
 
-14 HTML pages at present.
+9 content pages at present (excluding assets and special files).
 
 ### Essays and their front matter
 
@@ -269,8 +279,8 @@ never parsed** — order comes from `date`, numbering from `number`, the URL fro
 | `title` | yes | string | headline, and the email subject the builder prints |
 | `slug` | yes | string | becomes the URL; must be lowercase words joined by hyphens, and unique across essays — both enforced |
 | `number` | yes | number | displayed zero-padded to three digits |
-| `topic` | yes | string | must be a key of `site.topics` — enforced |
-| `date` | yes | `YYYY-MM-DD` | drives all ordering: lead panel, dateline, archive, "newest" |
+| `topic` | yes | string | retained in front matter but unused by templates (for reversible topic reintroduction); must be a key of `site.topics` — enforced |
+| `date` | yes | `YYYY-MM-DD` | drives all ordering: front page, dateline, archive, "newest" |
 | `readTime` | no | number | calculated at 160 wpm from the body, hand-override wins |
 | `hook` | yes | string | the site one-liner |
 | `emailHook` | no | string | falls back to `hook` |
@@ -343,27 +353,16 @@ form posts normally and Buttondown's own page answers.
 
 Listed, not fixed.
 
-1. **A hard-coded `netlify.app` URL exists outside the config.** `README.md`
-   prints `https://on-purpose-tim.netlify.app/welcome/` in the instructions for
-   Buttondown's confirmation redirect. Contradicts "Don't hard-code the
-   `netlify.app` URL anywhere outside that config." A domain swap would need this
-   line changed by hand.
-
-2. **Topics are extensible by config.** `src/archive-topic.njk` paginates over
-   `site.topics`, so adding a sixth key to `content/site.json` silently produces a
-   sixth archive page and makes that topic valid in front matter. "Do not make
-   them extensible" is documented but not enforced.
-
-3. **The drop cap is not essay-only.** `.prose > p:first-of-type::first-letter`
+1. **The drop cap is not essay-only.** `.prose > p:first-of-type::first-letter`
    matches any `.prose` container, and the About page uses one — so About opens
    with a drop cap too. The decisions describe it as "opening each essay". This
    matches the signed-off mockup, so it may well be deliberate.
 
 Softer observations, not contradictions:
 
-4. **All four essays are dated in the future** — 9, 16, 23 and 30 August 2026.
-   Every "newest" behaviour reads the latest date, so the dateline and lead panel
-   currently advertise an edition dated after today, while all four are already
+2. **All five essays are dated in the future** — 9, 16, 23, 30 August and 6 September 2026.
+   Every "newest" behaviour reads the latest date, so the dateline and front page
+   currently advertise an edition dated after today, while all five are already
    readable. Nothing records whether these dates are a real schedule or sample
    data carried over from the mockup.
 
