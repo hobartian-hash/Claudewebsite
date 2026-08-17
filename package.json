@@ -1,8 +1,8 @@
 {
-  "name": "on-purpose",
+  "name": "chosen-out-loud",
   "version": "1.0.0",
   "private": true,
-  "description": "On Purpose — a weekly essay newsletter by Tim, Hobart, Tasmania.",
+  "description": "Chosen Out Loud — a weekly essay newsletter by Tim Hynes in Hobart.",
   "license": "UNLICENSED",
   "engines": {
     "node": ">=18"
