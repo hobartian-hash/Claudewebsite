@@ -1,11 +1,11 @@
-{# The lead panel on the home page. A dark block standing in for the
-   photograph a normal newsletter would use here. Always the newest
-   essay, chosen by date. #}
+{# The front-page story: always the newest essay, chosen by date.
+   Light and ruled — editorial, not an ad panel. #}
 {% macro lead(e, site) -%}
-<a class="lead" href="/essays/{{ e.slug }}/">
-      <span class="pill">{{ e.topic | topicName(site.topics) }}</span>
-      <h2>{{ e.title }}</h2>
-      <p>{{ e.hook }}</p>
-      <span class="row"><span>Issue No. {{ e.number | pad }} &middot; {{ e.readTime }} min read</span><span class="go">Read the essay &rarr;</span></span>
-    </a>
+<section class="frontpage">
+  <span class="eyebrow">This {{ site.publishDay }} &middot; Issue No. {{ e.number | pad }}</span>
+  <h1><a href="/essays/{{ e.slug }}/">{{ e.title }}</a></h1>
+  <p class="standfirst">{{ e.hook }}</p>
+  <p class="fpmeta">By {{ site.author }} &middot; {{ e.date | fmtDate }} &middot; {{ e.readTime }} min read</p>
+  <a class="backlink" style="margin:0" href="/essays/{{ e.slug }}/">Read the essay &rarr;</a>
+</section>
 {%- endmacro %}
