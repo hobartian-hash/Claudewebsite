@@ -386,12 +386,22 @@ section still needed no edits. Also clear the now-resolved contradictions #2
 
 ## Order
 
-**1 → 2 → 3 → 4 → 5 → 6 → 7.**
+**1 → 2 → 4 → 3 → 5 → 6 → 7.**
 
-Dependencies: Task 3 assumes Task 1's CSS deletions and reads `site.motto`,
-which Task 4 adds (it degrades to an empty line until then, so the order is a
-preference, not a hard block). Task 6 removes markup that Tasks 1–3 style, so
-it must come after them. Task 7 must be last.
+Note that **4 comes before 3**, which is not the order the tasks are written
+in. Task 3 renders `site.motto`, and Task 4 is what adds it to config. Running
+3 first is legal — the line degrades to empty and the build still passes — but
+since every merge deploys straight to the live site, doing 4 first means the
+motto is never missing from the home page, even briefly.
 
-Tasks 4 and 5 are independent of everything else and of each other — if a
-layout PR stalls, either can be pulled forward.
+Other dependencies: Task 3 assumes Task 1's CSS deletions. Task 6 removes
+markup that Tasks 1–3 style, so it must come after them. Task 7 must be last,
+because it documents the finished state.
+
+Task 5 is independent of everything and can be pulled forward if a layout PR
+stalls.
+
+**Each pull request must be merged before the next session starts.** A session
+begins by cloning the default branch; if the previous task is still unmerged,
+the new session cannot see its work and will either duplicate it or fail its
+acceptance checks.
