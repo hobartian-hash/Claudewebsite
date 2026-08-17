@@ -313,6 +313,18 @@ figure.gridfig .t{font-size:.6875rem;font-weight:700;letter-spacing:.14em;text-t
 .fourbox div.active b{border-color:var(--warm);color:var(--warm)}
 figure.gridfig figcaption{font-size:.8125rem;color:var(--soft);margin-top:.9rem;font-style:italic}
 
+/* End mark. The printer's square that closes a magazine feature, set in
+   brass and hung off the last paragraph of the body — the one immediately
+   before the sign-off — so it sits on the final line rather than on a line
+   of its own.
+
+   Scoped by :has(+ .signoff), which does two useful things for free. The
+   About page uses .prose but has no sign-off, so it never gets a mark. And
+   an essay ending on a quote or a figure has no paragraph in that position,
+   so it gets no mark either — the same rule the email follows when it
+   decides where the sign-off goes. */
+.prose > p:has(+ .signoff)::after{content:"\2009\25AA";color:var(--warm)}
+
 /* Sign-off: one line, italic, secondary grey. Deliberately quiet — the
    essays end on a question, and a large sign-off competes with it. */
 .signoff{margin-top:2.5rem;font-family:var(--prose);font-size:1.125rem;
