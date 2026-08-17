@@ -3,10 +3,10 @@
 
 {% macro cta(site, id) -%}
 <section class="cta">
-      <span class="eyebrow">Join the list</span>
-      <h2>Something worth reading on a <em>{{ site.publishDay }}</em>.</h2>
-      <p>{% if site.readerCount %}{{ site.readerCount }}. {% endif %}One essay a week. Free, and easy to leave.</p>
+      <span class="eyebrow">{{ site.subscribe.eyebrow }}</span>
+      <h2>{{ site.subscribe.heading }}</h2>
+      <p>{{ site.subscribe.line }}</p>
       {{ subform(site, 'sub-' + id) }}
-      <p class="fine">No spam. Unsubscribe anytime.</p>
+      <p class="fine">{{ site.subscribe.reassurance }}</p>
     </section>
 {%- endmacro %}
