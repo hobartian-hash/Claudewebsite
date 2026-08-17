@@ -1,7 +1,7 @@
-# On Purpose
+# Chosen Out Loud
 
-The website and email machinery for **On Purpose** — one short essay every
-Sunday, by Tim, in Hobart.
+The website and email machinery for **Chosen Out Loud** — one short essay every
+Sunday from Tim Hynes in Hobart, about the distance between what you meant and what actually happened.
 
 You write one file. The website and the email both come out of it.
 
@@ -191,11 +191,7 @@ When someone clicks the confirm link in Buttondown's email, they land on
 `/welcome/` — a short page that says they're in, sets expectations, and points
 them at three essays to read now. It has no subscribe box on it, deliberately.
 
-To make Buttondown send them there, set its confirmation redirect to:
-
-```
-https://on-purpose-tim.netlify.app/welcome/
-```
+To make Buttondown send them there, set its confirmation redirect to your site URL (the `baseUrl` value in `content/site.json`) followed by `/welcome/`.
 
 In Buttondown that's under **Settings → Subscribing**. If there's no field for
 it on that screen, the setting is called `subscription_confirmation_redirect_url`
