@@ -53,6 +53,7 @@ module.exports = function (eleventyConfig) {
       .slice(0, 3)
   );
 
+  // Kept for future reinstatement of topic filtering in the UI.
   eleventyConfig.addFilter("byTopic", (essays, topic) =>
     topic ? essays.filter((e) => e.topic === topic) : essays
   );

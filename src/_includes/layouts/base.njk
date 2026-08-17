@@ -2,7 +2,7 @@
   {%- set pageTitle = essay.title + ' — ' + site.author -%}
   {%- set pageDescription = essay.hook -%}
 {%- elif pageKind == 'archive' -%}
-  {%- set pageTitle = (topicLabel + ' — Archive — ' + site.wordmark) if topicLabel else ('Archive — ' + site.wordmark) -%}
+  {%- set pageTitle = 'Archive — ' + site.wordmark -%}
 {%- elif pageKind == 'about' -%}
   {%- set pageTitle = 'About — ' + site.wordmark -%}
 {%- elif pageKind == 'welcome' -%}
