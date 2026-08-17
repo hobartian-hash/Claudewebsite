@@ -4,10 +4,10 @@
    are baked into the markup, so the form works with JavaScript off. When
    it's empty there is nowhere to post, and src/js/subscribe.js says so
    in the note below the form rather than pretending it worked. #}
-{% macro subform(site, id, label="Subscribe free") -%}
+{% macro subform(site, id, label=site.subscribe.button) -%}
 <form class="subform" data-sub novalidate{% if site.subscribeEndpoint %} action="{{ site.subscribeEndpoint }}" method="post" data-note="{{ site.subscribeNote }}"{% endif %}>
       <label class="sr" for="{{ id }}">Email address</label>
-      <input id="{{ id }}" type="email" name="email" placeholder="you@company.com" required autocomplete="email">
+      <input id="{{ id }}" type="email" name="email" placeholder="{{ site.subscribe.placeholder }}" required autocomplete="email">
       <button type="submit">{{ label }}</button>
     </form><p class="formnote" role="status" aria-live="polite" hidden></p>
 {%- endmacro %}

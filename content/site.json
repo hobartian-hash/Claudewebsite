@@ -24,6 +24,15 @@
   "_subscribeNote": "Shown under the box after someone signs up. Match it to your Buttondown confirmation setting.",
   "subscribeNote": "Almost there — check your inbox to confirm.",
 
+  "subscribe": {
+    "eyebrow": "The Sunday letter",
+    "heading": "It arrives Sunday, and it doesn't ask you for anything.",
+    "line": "One essay a week. Free, and easy to leave.",
+    "button": "Get it Sunday",
+    "placeholder": "your email address",
+    "reassurance": "No spam. Unsubscribe anytime."
+  },
+
   "socials": [
     { "label": "LinkedIn", "url": "https://www.linkedin.com/in/tim-hynes-92542b12" }
   ],
