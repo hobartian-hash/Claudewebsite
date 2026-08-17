@@ -446,6 +446,58 @@ footer.foot a:hover{color:var(--accent)}
   .cta p,.cta .fine{color:#CFC8BC}
 }
 
+/* =========================================================
+   PRINT
+   The one place two columns actually work, because paper has a fixed page
+   height and you never have to scroll back up. An essay printed from the
+   site comes out as a feature: two columns of Newsreader, the drop cap
+   intact, no navigation, and the issue number and address at the foot.
+
+   Screen layout is untouched — everything below is inside @media print.
+   ========================================================= */
+.printfoot{display:none}
+
+@media print{
+  @page{margin:18mm}
+
+  /* The paper tint is left alone rather than forced to white. Browsers
+     don't print background colours unless the reader asks for them, so by
+     default this comes out on white paper; if they do ask, they get the
+     warm paper the site is designed on. Either way the type is ink. */
+  html,body{font-size:10.5pt}
+  main{animation:none}
+
+  /* Anything that can't be followed on paper, or that isn't the essay. */
+  .masthead,.runhead,footer.foot,.cta,.secline,.index,.issuenav,
+  .backlink,.follow,.subform{display:none}
+
+  .wrap,.measure{max-width:none;margin:0;padding:0}
+
+  .essayhead{padding-top:0}
+  .essayhead h1{font-size:24pt;line-height:1.1;margin:0 auto .5rem;max-width:24ch}
+  .deck{font-size:12pt;max-width:44ch;margin-bottom:.8rem}
+  .byline{font-size:8.5pt}
+  .headrule{margin-top:1.2rem;background:#000}
+
+  /* The two columns. 18mm margins on A4 leave roughly a 45-character
+     measure per column, which is the newspaper figure. */
+  .prose{padding-top:1.2rem;font-size:10.5pt;line-height:1.55;
+    columns:2;column-gap:7mm}
+  .prose p{margin-bottom:.8rem}
+  .prose h2{font-size:13pt;margin:1.4rem 0 .5rem;break-after:avoid}
+  .prose blockquote,figure.gridfig,.prose table{break-inside:avoid;margin:1.2rem 0}
+  .prose blockquote{font-size:13pt;padding:.9rem 1rem}
+  .fourbox div{min-height:0;padding:.7rem .8rem;font-size:9pt}
+  .signoff{font-size:10.5pt;margin-top:1.2rem}
+
+  /* A printed link is a dead end unless it says where it went. */
+  .prose a[href^="http"]::after{content:" (" attr(href) ")";font-size:8.5pt;color:var(--soft)}
+
+  .printfoot{display:block;margin-top:1.5rem;padding-top:.6rem;
+    border-top:1px solid var(--line);text-align:center;
+    font:400 8pt var(--ui);color:var(--soft)}
+}
+
 main{animation:rise .35s ease both;background:var(--bg);color:var(--ink)}
 article{background:var(--bg);color:var(--ink)}
 @keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}

@@ -32,6 +32,10 @@ layout: layouts/base.njk
         <p class="follow">If this was useful, forward it on, or <a href="{{ site.baseUrl }}{{ page.url }}" class="copylink" data-url="{{ site.baseUrl }}{{ page.url }}" data-label="copy the link">copy the link</a>.</p>
       </div>
 
+      {#- Printed pages travel without their address. Hidden on screen;
+          the print stylesheet is the only thing that shows it. -#}
+      <p class="printfoot measure">{{ site.wordmark }} &middot; Issue No.&nbsp;{{ essay.number | pad }} &middot; {{ essay.date | fmtDate }} &middot; {{ site.baseUrl }}{{ page.url }}</p>
+
       {#- Issue navigation. A paper runs in order, so the foot of an essay
           moves to the issue either side of this one by date, before the
           "read next" suggestions offer anything by subject. -#}
