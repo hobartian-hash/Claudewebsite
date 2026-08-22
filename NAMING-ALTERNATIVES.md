@@ -240,3 +240,59 @@ sentences already approved under N4; the third is Tim's own line.
    approved `description`.
 
 Recommended pairing: **The Sunday Letterbox** + draft one.
+
+---
+
+# Round three — straplines for The Sunday Letterbox
+
+*22 August 2026. Name settled: **The Sunday Letterbox**. Tim rejected the
+recommended strapline because it reads as the gap between being a father and
+being at work, which is not his subject.*
+
+## 9. He's right, and the fault is in the source
+
+The approved `description` phrase runs *"at work, at home, and in the gap
+between the two."* So "the two" literally **is** work and home. `NAMING-REVIEW.md`
+§5 promoted that as the best phrase on the site; on this reading it is the one
+line that describes a different newsletter — the work-life-balance one.
+
+The actual subject is the distance between **what you meant and what happened**,
+which runs *through* both domains rather than sitting between them. The About
+page already says so: *"I've stopped trying to keep those separate, because the
+same thing is going on in both."*
+
+Every draft below is built so that nothing can grammatically attach itself to a
+pair of role nouns.
+
+## 10. The length budget
+
+The strapline renders uppercase and letter-spaced at `.16em`, 10px
+(`.strapline` in `style.css`), which eats width fast. The current line —
+*"Tim Hynes · one essay, Sunday mornings"* — is 39 characters and is known to
+fit. **Treat 40 characters as the ceiling.** The rejected draft was 44, which is
+part of why it felt like it was straining.
+
+## 11. The drafts
+
+**Fits the masthead:**
+
+| # | Strapline | Chars | What it does |
+|---|---|---|---|
+| **A** | **What I meant, and what happened** | 31 | **Recommended.** The territory in six words, nothing abstract in it. The symmetry does the work — two halves of one sentence that should match and don't. No roles are named, so the roles-gap reading can't form |
+| B | What I only noticed afterwards | 30 | Near enough Tim's own sentence (*"a thing I got wrong and only noticed later"*). Names the vantage point rather than the subject; tells a reader the posture but not the terrain |
+| C | Meaning well, and getting it wrong | 34 | The most self-implicating, and closest to how he actually writes — promises the reader he's in the story and not as the person who had it sorted. Possibly too self-deprecating for a masthead clients also see |
+| D | Essays on drift, at work and at home | 36 | The safest way to name both domains: they sit at the end as *locations*, with the subject stated first, so they can't be misread as a pair with a gap between them. Uses his own thesis word |
+| E | Work, home, and what I noticed too late | 39 | The rejected draft, repaired — "what I noticed too late" is a third item in the list rather than a relationship between the first two. At the ceiling |
+
+**Too long for the masthead** — these belong in `description` and the hero lede,
+where there is room:
+
+- *The distance between what you meant and what happened* (53)
+- *Work, fathering, and what I only understood later* (49)
+
+Worth noting: the approved `description` already says this correctly — *"about
+the distance between what you meant and what actually happened."* The meta line
+has been right all along. Only the strapline and the older hero copy drifted
+into work-versus-home.
+
+**Recommended pairing:** The Sunday Letterbox + draft A.
