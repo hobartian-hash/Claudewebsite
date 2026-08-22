@@ -170,3 +170,73 @@ and `README.md`. The email picks the name up from config with no template edit
 
 And the test the original review set, which is still the right one: someone
 hears it at a barbecue on Saturday and has to find it on Monday.
+
+---
+
+# Round two — Letterbox, plus one word
+
+*22 August 2026. Tim likes the word "Letterbox" but not standing alone, and
+wants the name itself to signal the subject the way "On Purpose" did.
+Collisions checked the same day.*
+
+## 6. Form is easy; subject is the strapline's job
+
+Adding a word to *Letterbox* makes the **form** unmistakable in one move — a
+weekly letter of essays, arriving Sunday. That's cheap and it works.
+
+What a second word can't easily do is make the **subject** clear, because the
+subject is an abstraction: the distance between what someone meant and what
+actually happened. There is no concrete noun for it. That is precisely why "On
+Purpose" felt clear — it named the abstraction head-on. That was its one real
+strength, and also what made it wrong: the abstraction it named was the moral
+rather than the territory.
+
+**The likely real source of the problem.** The strapline is *"Tim Hynes · one
+essay, Sunday mornings."* It says who and when. It never says what about. So
+whatever the wordmark does, the top of the page currently never states the
+subject. That is a one-line fix, and it is the half of this that actually
+answers "make it clear what I'm writing about".
+
+Split the job: wordmark carries the form, strapline carries the subject.
+
+## 7. The compounds
+
+| Name | Verdict |
+|---|---|
+| **The Sunday Letterbox** | **Recommended.** Keeps the word; says when it arrives and what it is. The definite article is doing real work — *the* makes it a thing you can hand to someone (*"it was in this week's Sunday Letterbox"*), which is the test Chosen Out Loud failed. The only one of the four that reads as a masthead rather than a category label. Cost: 20 characters against Chosen Out Loud's 15, so the 390px wrap check is live again, and the lowercase email line carries "sunday" twice — if that stutters, change the email strapline, not the name. Neighbours but not collisions: [Sunday Letters](https://sundaylettersfromsam.substack.com/), [Letters from Sunday](https://virginiakinnier.substack.com/about) |
+| **Letterbox Notes** | Viable, plain, and exactly the same length as the current name so nothing in the layout moves. Cost: *Notes* is the most-used second word in newsletter naming and is Substack's name for its own posting feature, so it's muddy to search and doesn't sound like only you. It also undersells — these are essays |
+| **Letterbox Essays** | Maximum clarity, minimum mystery; clean on search. Cost: it's a description, not a name — the masthead equivalent of a sign reading SHOP — and the email line reads "letterbox essays · the sunday essay by tim hynes", saying essay twice in eight words |
+| **Letterbox & Lounge Room** | Wildcard, and the only candidate that gestures at *subject* rather than format: two rooms, one where things arrive and wait, one where they interrupt. To a fresh reader it lands as work and home, which is the territory. Cost: too long for the masthead at 390px without shrinking the type; and it slightly repurposes essay 004's phrase, where the pair is about attention and interruption rather than work and home |
+
+**Ruled out:**
+
+- **Hobart Letterbox** — dead. "Hobart letterbox" is the search term for
+  [junk-mail distribution and catalogue drops](https://ignitionprint.com.au/hobart-letterbox-drops/).
+- **The Late Letterbox** — the pun works (late mail, noticed late, the late
+  edition) but *late* reads first as tardy, a poor promise from a thing that
+  arrives every Sunday without fail.
+- **Letterbox Dispatch** — the most worn-out word in newsletter naming, and
+  wrong for the register: urgent and reportorial, which the writing is not.
+
+**One tax on the whole family.** [Letterboxd](https://letterboxd.com/), the film
+site, has enormous search gravity, and some people will be autocorrected toward
+it whenever they type "letterbox…". There is also
+[Letterboxx](https://letterboxx.app/), a newsletter-reading app. Neither is
+disqualifying, and a compound resolves far better than the bare word — but it is
+the price of this word and it should be paid knowingly.
+
+## 8. The strapline drafts
+
+Where "what I'm writing about" actually gets answered. Two of the three are
+sentences already approved under N4; the third is Tim's own line.
+
+1. **Work, fathering, and the gap between the two** — *recommended.* Concrete,
+   names both halves of the life, and promotes the phrase the first review
+   identified as the best writing on the site and the one nobody ever sees
+   (it currently sits at the end of the meta description).
+2. **Tim Hynes · work, fathering, and what you only notice later** — keeps the
+   byline in the mark.
+3. **The distance between what you meant and what happened** — straight from the
+   approved `description`.
+
+Recommended pairing: **The Sunday Letterbox** + draft one.
