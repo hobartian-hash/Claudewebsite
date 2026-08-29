@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Project memory for **Chosen Out Loud** — a weekly essay newsletter by Tim Hynes in Hobart.
+Project memory for **The Sunday Letterbox** — a weekly essay newsletter by Tim Hynes in Hobart.
 One essay every Sunday, published to a website and sent by email.
 
 > This file holds **decisions**, not facts about the code. The facts section at
@@ -33,7 +33,7 @@ The palette, typography and layout were worked through carefully and signed off.
 Treat them as fixed constraints, not suggestions. If something looks like a
 mistake, ask before changing it.
 
-Renamed from On Purpose, August 2026 — see NAMING-REVIEW.md. Palette, typefaces, portrait rules and email rules carried over unchanged.
+Renamed from On Purpose to Chosen Out Loud and then to The Sunday Letterbox, August 2026 — see NAMING-REVIEW.md and NAMING-ALTERNATIVES.md. Palette, typefaces, portrait rules and email rules carried over unchanged through both renames.
 
 **Palette**
 

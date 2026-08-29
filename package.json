@@ -1,8 +1,8 @@
 {
-  "name": "chosen-out-loud",
+  "name": "the-sunday-letterbox",
   "version": "1.0.0",
   "private": true,
-  "description": "Chosen Out Loud — a weekly essay newsletter by Tim Hynes in Hobart.",
+  "description": "The Sunday Letterbox — a weekly essay newsletter by Tim Hynes in Hobart.",
   "license": "UNLICENSED",
   "engines": {
     "node": ">=18"
