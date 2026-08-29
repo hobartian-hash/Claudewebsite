@@ -296,3 +296,75 @@ has been right all along. Only the strapline and the older hero copy drifted
 into work-versus-home.
 
 **Recommended pairing:** The Sunday Letterbox + draft A.
+
+---
+
+# Round four — the motto
+
+*22 August 2026. Name and strapline settled: **The Sunday Letterbox** /
+**"Essays on drift, at work and at home"** (draft D, 36 characters). Tim asked
+whether "out loud" could be trimmed from the motto and the rest reused.*
+
+**Still nothing applied.** `content/site.json` is untouched by request — this
+round is documentation only.
+
+## 12. Trimming "out loud" works
+
+The current motto is *"Drift is free. Everything worth having has to be
+&lt;em&gt;chosen out loud&lt;/em&gt;."* — written to justify the retired wordmark.
+
+*Out loud* is the same dangling adverb that made the old name awkward: an adverb
+hunting for a verb, with nobody to be loud at. Cut it and the sentence stands
+on its own, and no longer points at a name that isn't there any more.
+
+The motto renders once, in the home about strip (`home.njk`), in DM Serif
+Display at 1.2rem — not uppercase, not letter-spaced — so length is generous
+here, unlike the strapline. `.motto em` renders in accent slate.
+
+**Recommended:**
+
+> Drift is free. Everything worth having has to be *chosen*.
+
+The parallel is the whole thesis and it survives the cut intact: drift costs
+nothing, everything else costs a decision. The italics now fall on one word
+rather than three, which is a better typographic beat.
+
+**Tighter variants:**
+
+| Motto | Note |
+|---|---|
+| Drift is free. Everything else has to be *chosen*. | Sharper parallel; drops "worth having", which does less work than it looks |
+| Drift is free. Choosing *costs* something. | Hardest of the three, and connects to the motif in essay 005 — the bill that arrives years later and goes to someone else. Also furthest from what Tim originally wrote |
+
+## 13. One thing to weigh — "drift" would appear twice on the home page
+
+The chosen strapline is *"Essays on drift, at work and at home"*, in the
+masthead. The motto sits further down the same page in the about strip. Both
+would say *drift*.
+
+Not automatically wrong — across a masthead and a manifesto line, repetition can
+read as a drumbeat rather than an echo. But if the word should land once and
+land hard, these say the same thing without it:
+
+| Motto | Source |
+|---|---|
+| **Nothing worth having happens *by default*.** | Built from `aboutMore` ¶3, "what happens by default". **Strongest of the drift-free options** — states the drift without the word, and a single sentence is more quotable than a pair |
+| Everything worth having has to be *chosen*. | The trim with the first sentence dropped |
+
+## 14. Consistency catch — `aboutMore` ¶3
+
+The full sentence also appears verbatim in `aboutMore` ¶3, on the About page:
+*"Drift is free. Everything worth having has to be chosen out loud."*
+
+Whatever happens to the motto must happen there too, or the site carries both
+versions. That paragraph is authored prose, so no change to it is drafted here —
+flagged only so the two are decided together.
+
+## 15. State of play
+
+| Decision | Answer |
+|---|---|
+| Name | **The Sunday Letterbox** |
+| Strapline | **Essays on drift, at work and at home** (36 chars) |
+| Motto | Open — see §12–13 |
+| Applied? | **No.** `content/site.json`, `README.md`, `package.json` and `CLAUDE.md` all still carry "Chosen Out Loud" |
