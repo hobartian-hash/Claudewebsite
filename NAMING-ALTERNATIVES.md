@@ -1,0 +1,370 @@
+# Chosen Out Loud — second opinion, and alternatives
+
+*Written 22 August 2026 at Tim's request: "I'm not liking Chosen Out Loud, it
+just seems clunky." Companion to `NAMING-REVIEW.md` (17 August), which is still
+the reasoning behind the rename. This file only revisits N1 — the name itself.*
+
+*Nothing here is applied. `content/site.json` still reads "Chosen Out Loud".
+Naming is Tim's call; these are drafts to react to. Collisions checked
+22 August 2026.*
+
+---
+
+## 1. The clunk is real, and it has four separate causes
+
+Worth separating, because three of them are fixable by picking almost any other
+name and the fourth will follow you into the next one if it isn't named.
+
+**1. It isn't a noun.** It's a participle phrase. A masthead has to survive
+being spoken inside a sentence — *"it was in this week's ___"*, *"I read it in
+___"*. "I read it in Chosen Out Loud" doesn't sit. You can't put *the* in front
+of it, can't make it possessive, can't shorten it in conversation. Compare
+*Letterbox*, *The Drift*, *Culture Study* — all things you can hold.
+
+**2. It's an amputated fragment.** It is the tail of *"everything worth having
+has to be chosen out loud"*. Cut loose from that sentence the ear waits for the
+missing pieces — chosen by whom, out loud to whom. The masthead only resolves
+once you've read the motto underneath it. A name that needs the line below it
+to make sense is asking the strapline to do rescue work.
+
+**3. The stress fights.** CHO-sen out LOUD — two strong beats with a weak,
+ambiguous middle, and "out loud" is an adverb hunting for a verb that isn't
+there. Which is why, of all things, it is awkward to say out loud.
+
+**4. And the one that matters: it repeats the fault the review diagnosed.**
+§1 of `NAMING-REVIEW.md` says the site was *"named after the moral of the story"*
+while *"the essays are about the drift"*. But "choose out loud" is still an
+instruction, and still the destination. It's a better sentence than "On Purpose",
+and unlike "On Purpose" it's searchable — so it fixed §2 and §3 properly. It did
+not fix §1. The essays are about meaning well and getting it wrong; the masthead
+is still about getting it right.
+
+So the clunk isn't only in the mouth. Some of it is that the name is arguing
+with the prose.
+
+## 2. Six tests for the replacement
+
+1. **Sayable cold.** *"You should read Tim's thing, ___."* If it needs a run-up,
+   it's out.
+2. **A noun, or an idiom people already say whole.** Something you can put *the*
+   or *this week's* in front of.
+3. **Names the fault, not the fix.** Nothing that could survive on a
+   motivational poster.
+4. **One or two words.** Three only if they're a single unit.
+5. **Searchable.** Clear in newsletters, podcasts, and Australian consulting.
+6. **Looks like a masthead.** DM Serif Display, ink on cream, under a weekend
+   dateline — not a slogan.
+
+**The important unlock:** the strapline already says what the thing is —
+*"Tim Hynes · one essay, Sunday mornings"*. The wordmark does not also have to
+describe the subject. That was the pressure that produced both "On Purpose" and
+"Chosen Out Loud", and it can be released. The name is free to be concrete and
+slightly oblique, because the line under it is doing the explaining.
+
+## 3. The three worth your time
+
+### A. Letterbox — *recommended*
+
+Option B in the original review, ranked *"strongest on ethos"* there, and it
+lost. It passes all six tests; Chosen Out Loud passes two.
+
+One word, a noun, concrete, plain, Australian, and already yours — essay 004,
+whose argument (letterbox not lounge room; earn the inbox, don't perform in the
+lounge room) is the ethic of the whole newsletter compressed into a single word.
+It's literally where the thing arrives. It reads as a masthead in serif and it
+takes *the* and *this week's* without complaint.
+
+*Cost:* it says nothing about the subject — which §2 above argues is fine, but
+it is a real trade. One small Substack in a different genre
+([Letterbox: Bookish & Filmish](https://helenwalsh.substack.com/)); nothing in
+consulting, coaching or essays.
+
+*Check before committing:* the domain. `letterbox.com.au` and plain
+`letterbox.com` are almost certainly gone — a prefixed form
+(`readletterbox.com`, `letterbox.email`) is the likely landing spot, and that
+slightly weakens the "just type it in" advantage.
+
+### B. Meant Well — *recommended if the name should carry the theme*
+
+*"He meant well"* is the exact sentence people say about someone who caused harm
+with good intentions. That is every essay on the site: the silence meant to
+protect that produced the harm (003), the softened conversations that felt like
+kindness and sent the bill to someone else (005), the imprint passed on without
+meaning to (002), two months teaching an inbox discipline while not running his
+own (004).
+
+It is the first candidate that names the fault instead of the fix, and it does
+it self-implicatingly rather than instructively — which is the actual voice of
+the writing. It's a verb phrase rather than a noun, but unlike Chosen Out Loud
+it's a complete idiom people already say whole, so nothing is missing from it.
+Two words, four syllables, falling stress. It takes a byline cleanly:
+*Meant Well — Tim Hynes*.
+
+*Cost — read this one properly:* two podcasts sit nearby. *We Meant Well*
+([Apple](https://podcasts.apple.com/sg/podcast/we-meant-well/id1891120071)) is
+small (9 episodes as of May 2026) but its premise is uncomfortably close —
+life, work, faith, leadership and raising the next generation, about *"moments
+when intentions were good but execution got messy"*. *We Mean Well*
+([Apple](https://podcasts.apple.com/gb/podcast/we-mean-well/id1633213720)) is a
+large comedy podcast, ~400 episodes, no overlap in subject. Neither is the bare
+two-word name and neither is a newsletter, and nothing turned up in newsletters,
+Substack or Australian consulting. But the first one is close enough on premise
+that you should look at it yourself before committing.
+
+*Consequence:* the motto stops explaining the name. Right now "Drift is free.
+Everything worth having has to be chosen out loud" justifies the masthead. Under
+this name it goes back to being a thesis line that stands on its own — which is
+fine, it was doing that in `aboutMore` for months, but it's a change to make
+knowingly.
+
+### C. Without Meaning To — *the safe middle*
+
+Straight out of essay 002's title. Same territory as *Meant Well*, gentler and
+more literary. Completely clear on every search run — newsletters, Substack,
+podcasts.
+
+*Cost:* it is a dangling adverbial phrase, which is the same grammatical shape
+as Chosen Out Loud. It flows better, because it's one idiomatic unit with a
+natural falling rhythm rather than a clipped fragment — but if the clunk you're
+feeling is structural rather than semantic, this one will eventually feel like
+it too. Worth saying both aloud before choosing between them.
+
+## 4. The rest of the field
+
+| Name | Where it comes from | Verdict |
+|---|---|---|
+| **Noticed Later** | *"a thing I got wrong and only noticed later"* (`aboutMore` ¶2) | Clear on search; names the vantage point of every essay. Reads more like an essay title than a masthead. Solid, unexciting |
+| **The Late Mail** | Australian racing — the last tips before the jump | A noun, unmistakably Australian, and dead-on for ink-and-paper. Nice echo: *The Tasmanian Mail*, the Mercury's weekly, 1877–1935. Risks reading as sport, and "late" as tardy |
+| **Letter from Hobart** | The *New Yorker* "Letter from…" tradition | Maximally searchable and honest; pairs with the dateline the design already has. Says nothing about the subject, and can read as local news or an expat dispatch |
+| **The Gap Between** | Option C in the review; *"the gap between the two"* | Literal description of every essay, but abstract in exactly the way you're trying to escape, and the construction is crowded (*Minding the Gap*, *The Curiosity Gap*) |
+
+**Ruled out on collision:**
+
+- **The Quiet Part** — at least four Substacks, one with ~28,000 subscribers.
+  Dead on arrival.
+- **Late Notice** — [latenotice.substack.com](https://latenotice.substack.com/)
+  already exists. Shame; the double meaning (noticing late, and a printed
+  notice) was the best pun available.
+- **Drift / Drift Is Free** — still blocked by
+  [The Drift](https://www.thedriftmag.com/), as the original review found.
+- **Hindsight**, **Second Thoughts** — generic and thoroughly occupied.
+
+## 5. If you change it again
+
+The timing argument from §9 of the review still holds, and holds *more* now:
+`hideFromSearch` is still `true`, there's still no custom domain, `readerCount`
+is still empty. Nothing has shipped to a reader under either name. This is the
+last cheap moment, and the domain purchase is the point of no return.
+
+The mechanical change is about six strings in `content/site.json` — `wordmark`,
+`description`, `motto`, and a look at `strapline` — plus a line in `CLAUDE.md`
+and `README.md`. The email picks the name up from config with no template edit
+(the same thing that made Task 4 cheap). Two things to do by hand:
+
+- **Say the email masthead out loud.** It renders lowercase:
+  *"letterbox · the sunday essay by tim hynes"*, *"meant well · the sunday essay
+  by tim hynes"*. That lowercase form is the real test of a wordmark.
+- **Check the masthead at 390px.** Both recommendations are shorter than "Chosen
+  Out Loud", so the wrap risk flagged in Task 4 goes away rather than getting
+  worse.
+
+And the test the original review set, which is still the right one: someone
+hears it at a barbecue on Saturday and has to find it on Monday.
+
+---
+
+# Round two — Letterbox, plus one word
+
+*22 August 2026. Tim likes the word "Letterbox" but not standing alone, and
+wants the name itself to signal the subject the way "On Purpose" did.
+Collisions checked the same day.*
+
+## 6. Form is easy; subject is the strapline's job
+
+Adding a word to *Letterbox* makes the **form** unmistakable in one move — a
+weekly letter of essays, arriving Sunday. That's cheap and it works.
+
+What a second word can't easily do is make the **subject** clear, because the
+subject is an abstraction: the distance between what someone meant and what
+actually happened. There is no concrete noun for it. That is precisely why "On
+Purpose" felt clear — it named the abstraction head-on. That was its one real
+strength, and also what made it wrong: the abstraction it named was the moral
+rather than the territory.
+
+**The likely real source of the problem.** The strapline is *"Tim Hynes · one
+essay, Sunday mornings."* It says who and when. It never says what about. So
+whatever the wordmark does, the top of the page currently never states the
+subject. That is a one-line fix, and it is the half of this that actually
+answers "make it clear what I'm writing about".
+
+Split the job: wordmark carries the form, strapline carries the subject.
+
+## 7. The compounds
+
+| Name | Verdict |
+|---|---|
+| **The Sunday Letterbox** | **Recommended.** Keeps the word; says when it arrives and what it is. The definite article is doing real work — *the* makes it a thing you can hand to someone (*"it was in this week's Sunday Letterbox"*), which is the test Chosen Out Loud failed. The only one of the four that reads as a masthead rather than a category label. Cost: 20 characters against Chosen Out Loud's 15, so the 390px wrap check is live again, and the lowercase email line carries "sunday" twice — if that stutters, change the email strapline, not the name. Neighbours but not collisions: [Sunday Letters](https://sundaylettersfromsam.substack.com/), [Letters from Sunday](https://virginiakinnier.substack.com/about) |
+| **Letterbox Notes** | Viable, plain, and exactly the same length as the current name so nothing in the layout moves. Cost: *Notes* is the most-used second word in newsletter naming and is Substack's name for its own posting feature, so it's muddy to search and doesn't sound like only you. It also undersells — these are essays |
+| **Letterbox Essays** | Maximum clarity, minimum mystery; clean on search. Cost: it's a description, not a name — the masthead equivalent of a sign reading SHOP — and the email line reads "letterbox essays · the sunday essay by tim hynes", saying essay twice in eight words |
+| **Letterbox & Lounge Room** | Wildcard, and the only candidate that gestures at *subject* rather than format: two rooms, one where things arrive and wait, one where they interrupt. To a fresh reader it lands as work and home, which is the territory. Cost: too long for the masthead at 390px without shrinking the type; and it slightly repurposes essay 004's phrase, where the pair is about attention and interruption rather than work and home |
+
+**Ruled out:**
+
+- **Hobart Letterbox** — dead. "Hobart letterbox" is the search term for
+  [junk-mail distribution and catalogue drops](https://ignitionprint.com.au/hobart-letterbox-drops/).
+- **The Late Letterbox** — the pun works (late mail, noticed late, the late
+  edition) but *late* reads first as tardy, a poor promise from a thing that
+  arrives every Sunday without fail.
+- **Letterbox Dispatch** — the most worn-out word in newsletter naming, and
+  wrong for the register: urgent and reportorial, which the writing is not.
+
+**One tax on the whole family.** [Letterboxd](https://letterboxd.com/), the film
+site, has enormous search gravity, and some people will be autocorrected toward
+it whenever they type "letterbox…". There is also
+[Letterboxx](https://letterboxx.app/), a newsletter-reading app. Neither is
+disqualifying, and a compound resolves far better than the bare word — but it is
+the price of this word and it should be paid knowingly.
+
+## 8. The strapline drafts
+
+Where "what I'm writing about" actually gets answered. Two of the three are
+sentences already approved under N4; the third is Tim's own line.
+
+1. **Work, fathering, and the gap between the two** — *recommended.* Concrete,
+   names both halves of the life, and promotes the phrase the first review
+   identified as the best writing on the site and the one nobody ever sees
+   (it currently sits at the end of the meta description).
+2. **Tim Hynes · work, fathering, and what you only notice later** — keeps the
+   byline in the mark.
+3. **The distance between what you meant and what happened** — straight from the
+   approved `description`.
+
+Recommended pairing: **The Sunday Letterbox** + draft one.
+
+---
+
+# Round three — straplines for The Sunday Letterbox
+
+*22 August 2026. Name settled: **The Sunday Letterbox**. Tim rejected the
+recommended strapline because it reads as the gap between being a father and
+being at work, which is not his subject.*
+
+## 9. He's right, and the fault is in the source
+
+The approved `description` phrase runs *"at work, at home, and in the gap
+between the two."* So "the two" literally **is** work and home. `NAMING-REVIEW.md`
+§5 promoted that as the best phrase on the site; on this reading it is the one
+line that describes a different newsletter — the work-life-balance one.
+
+The actual subject is the distance between **what you meant and what happened**,
+which runs *through* both domains rather than sitting between them. The About
+page already says so: *"I've stopped trying to keep those separate, because the
+same thing is going on in both."*
+
+Every draft below is built so that nothing can grammatically attach itself to a
+pair of role nouns.
+
+## 10. The length budget
+
+The strapline renders uppercase and letter-spaced at `.16em`, 10px
+(`.strapline` in `style.css`), which eats width fast. The current line —
+*"Tim Hynes · one essay, Sunday mornings"* — is 39 characters and is known to
+fit. **Treat 40 characters as the ceiling.** The rejected draft was 44, which is
+part of why it felt like it was straining.
+
+## 11. The drafts
+
+**Fits the masthead:**
+
+| # | Strapline | Chars | What it does |
+|---|---|---|---|
+| **A** | **What I meant, and what happened** | 31 | **Recommended.** The territory in six words, nothing abstract in it. The symmetry does the work — two halves of one sentence that should match and don't. No roles are named, so the roles-gap reading can't form |
+| B | What I only noticed afterwards | 30 | Near enough Tim's own sentence (*"a thing I got wrong and only noticed later"*). Names the vantage point rather than the subject; tells a reader the posture but not the terrain |
+| C | Meaning well, and getting it wrong | 34 | The most self-implicating, and closest to how he actually writes — promises the reader he's in the story and not as the person who had it sorted. Possibly too self-deprecating for a masthead clients also see |
+| D | Essays on drift, at work and at home | 36 | The safest way to name both domains: they sit at the end as *locations*, with the subject stated first, so they can't be misread as a pair with a gap between them. Uses his own thesis word |
+| E | Work, home, and what I noticed too late | 39 | The rejected draft, repaired — "what I noticed too late" is a third item in the list rather than a relationship between the first two. At the ceiling |
+
+**Too long for the masthead** — these belong in `description` and the hero lede,
+where there is room:
+
+- *The distance between what you meant and what happened* (53)
+- *Work, fathering, and what I only understood later* (49)
+
+Worth noting: the approved `description` already says this correctly — *"about
+the distance between what you meant and what actually happened."* The meta line
+has been right all along. Only the strapline and the older hero copy drifted
+into work-versus-home.
+
+**Recommended pairing:** The Sunday Letterbox + draft A.
+
+---
+
+# Round four — the motto
+
+*22 August 2026. Name and strapline settled: **The Sunday Letterbox** /
+**"Essays on drift, at work and at home"** (draft D, 36 characters). Tim asked
+whether "out loud" could be trimmed from the motto and the rest reused.*
+
+**Still nothing applied.** `content/site.json` is untouched by request — this
+round is documentation only.
+
+## 12. Trimming "out loud" works
+
+The current motto is *"Drift is free. Everything worth having has to be
+&lt;em&gt;chosen out loud&lt;/em&gt;."* — written to justify the retired wordmark.
+
+*Out loud* is the same dangling adverb that made the old name awkward: an adverb
+hunting for a verb, with nobody to be loud at. Cut it and the sentence stands
+on its own, and no longer points at a name that isn't there any more.
+
+The motto renders once, in the home about strip (`home.njk`), in DM Serif
+Display at 1.2rem — not uppercase, not letter-spaced — so length is generous
+here, unlike the strapline. `.motto em` renders in accent slate.
+
+**Recommended:**
+
+> Drift is free. Everything worth having has to be *chosen*.
+
+The parallel is the whole thesis and it survives the cut intact: drift costs
+nothing, everything else costs a decision. The italics now fall on one word
+rather than three, which is a better typographic beat.
+
+**Tighter variants:**
+
+| Motto | Note |
+|---|---|
+| Drift is free. Everything else has to be *chosen*. | Sharper parallel; drops "worth having", which does less work than it looks |
+| Drift is free. Choosing *costs* something. | Hardest of the three, and connects to the motif in essay 005 — the bill that arrives years later and goes to someone else. Also furthest from what Tim originally wrote |
+
+## 13. One thing to weigh — "drift" would appear twice on the home page
+
+The chosen strapline is *"Essays on drift, at work and at home"*, in the
+masthead. The motto sits further down the same page in the about strip. Both
+would say *drift*.
+
+Not automatically wrong — across a masthead and a manifesto line, repetition can
+read as a drumbeat rather than an echo. But if the word should land once and
+land hard, these say the same thing without it:
+
+| Motto | Source |
+|---|---|
+| **Nothing worth having happens *by default*.** | Built from `aboutMore` ¶3, "what happens by default". **Strongest of the drift-free options** — states the drift without the word, and a single sentence is more quotable than a pair |
+| Everything worth having has to be *chosen*. | The trim with the first sentence dropped |
+
+## 14. Consistency catch — `aboutMore` ¶3
+
+The full sentence also appears verbatim in `aboutMore` ¶3, on the About page:
+*"Drift is free. Everything worth having has to be chosen out loud."*
+
+Whatever happens to the motto must happen there too, or the site carries both
+versions. That paragraph is authored prose, so no change to it is drafted here —
+flagged only so the two are decided together.
+
+## 15. State of play
+
+| Decision | Answer |
+|---|---|
+| Name | **The Sunday Letterbox** |
+| Strapline | **Essays on drift, at work and at home** (36 chars) |
+| Motto | Open — see §12–13 |
+| Applied? | **No.** `content/site.json`, `README.md`, `package.json` and `CLAUDE.md` all still carry "Chosen Out Loud" |

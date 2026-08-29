@@ -1,6 +1,6 @@
-# Chosen Out Loud
+# The Sunday Letterbox
 
-The website and email machinery for **Chosen Out Loud** — one short essay every
+The website and email machinery for **The Sunday Letterbox** — one short essay every
 Sunday from Tim Hynes in Hobart, about the distance between what you meant and what actually happened.
 
 You write one file. The website and the email both come out of it.
